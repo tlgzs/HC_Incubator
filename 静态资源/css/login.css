@@ -1,0 +1,123 @@
+body{
+    background-image: url('../images/login_bg.png');
+}
+
+/* 登陆界面登录框样式 */
+.login{
+    box-sizing: border-box;
+    position: absolute;
+    width: 920px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -460px;
+    background-color: #e9f4fa;
+    padding: 35px;
+    border-radius: 5px;
+}
+
+.login-image-box{
+    width: 470px;
+    height: 380px;
+    margin-right: 35px;
+}
+
+.login-userinfo{
+    width: 345px;
+    color: #496086;
+}
+.login-userinfo h4{
+    text-align: center
+}
+.iconfont{
+    border: 1px solid #d3deec;
+    padding: 5px;
+    background-color: #f3f6f9;
+    font-size: 28px;
+    border-right: none;
+}
+.login-input{
+    height: 40px;
+    width: 290px;
+    padding-left: 12px;
+    border: 1px solid #d3deec;
+}
+.login-username{
+    height: 40px;
+}
+.login-password{
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.login-input-yzm{
+    width: 162px;
+    margin-right: 16px;
+    margin-bottom: 30px;
+}
+.login-yzm img{
+    height: 40px;
+    width: 130px;
+    vertical-align: middle;
+}
+
+.rember{
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+}
+
+input[type=checkbox].rember+.lbl::before{
+cursor: pointer;
+    font-family: fontAwesome;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFF;
+    content: "\a0";
+    background-color: #FAFAFA;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    height: 16px;
+    line-height: 14px;
+    min-width: 16px;
+    margin-right: 1px;
+    position: relative;
+    top: -2px;
+    left: -4px;
+}
+
+input[type=checkbox].rember:checked+.lbl::before{
+    display: inline-block;
+    content: '\f00c';
+    color: #32A3CE;
+    background-color: #F5F8FC;
+    border-color: #ADB8C0;
+}
+.lbl{
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.login-login{
+    display: block;
+    width: 350px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #6b8de8;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 19px;
+    letter-spacing: 16px;
+    border: 2px solid;
+    margin-top: 20px;
+}
+
+
+
+

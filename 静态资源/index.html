@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/common.css">
+    <title>孵化后台</title>
+</head>
+<body>
+    <div class="login clearfix">
+        <div class="login-image-box float-left">
+            <img src="images/login_pic.png" alt="">
+        </div>
+        <div class="login-userinfo float-left" style="margin-top: 50px;">
+            <h4>淮安留创园后台管理系统</h4>
+                <!-- 用户名 -->
+                <div class="login-username clearfix">
+                    <i class="iconfont icon-people_fill float-left"></i>
+                    <input class="float-left login-input" type="text"  id="username" placeholder="用户名" required>
+                </div>
+                <!-- 密码 -->
+                <div class="login-password clearfix">
+                    <i class="iconfont icon-lock_fill float-left"></i>
+                    <input class="float-left login-input" type="password" id="password"  placeholder="请输入密码" required>
+                </div>
+                <!-- 验证码 
+                <div class="login-yzm clearfix">
+                    <input type="text" class="login-input login-input-yzm" placeholder="请输入验证码" required>
+                    <img src="images/login_yzm.png" title="点击获取">
+                </div>
+                <label class="user-login-rember">
+                    <input name="rememberme" type="checkbox" class="rember"/>
+                    <span class="lbl"> 记住信息</span>
+                </label>-->
+                <button    onclick="check()" class="login-login">
+                    <span class="">登录</span>
+                </button>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright&copy;2015-2018 ALL rights reserved.
+            <a class="link_a" href="#" rel="nofollow" >沪ICP备17024837号-1</a>
+        </p>
+        <p>技术支持:
+            <a href="http://www.qiniuniu.com/" target="_blank" rel="nofollow">
+                <img class="qiniuniu" src="images/qiniuniu.png" />
+            </a>
+        </p>
+    </footer>
+           <script src="js/base64.js"></script>
+    <script>
+    	function check(){
+    		var b = new Base64();
+  var pwd = b.encode(document.getElementById("password").value);
+if(document.getElementById("username").value==1){
+   window.location.href="list.html";
+   }else if(document.getElementById("username").value==2){
+   	window.location.href="enterprise.html";
+    }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>淮安留学人员创业园</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		 <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/message.css" rel="stylesheet" type="text/css"/>
+		 <link rel="stylesheet" href="css/font.css">
+		   <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" href="css/xadmin.css">
+		 <link rel="shortcut icon" href="favicon.ico"> 
+		<link href="css/css/custom.css" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+	  <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    </head>
+    <body >
+	<style>
+	.layui-table th,.layui-table td{
+	line-height:25px;
+}
+.layui-table td,.layui-table th{
+border:1px solid #bec4db
+}
+.rowhide{
+display:none
+}
+
+.gradeX{
+border:0px solid transparent;
+}
+</style>
+	    <div class="container"  style="width:80%;min-width:1200px;margin-top:20px;">
+        <div class="logo" style="width:30%;display:inline;"> <image src="images/logo.png" style=""/></div>
+		   <a class="fa fa-cog right"   data-toggle="modal" href="#pwd"   style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　设置</a>
+		<a class="fa fa-power-off right"  data-toggle="modal" href="#pwd"  style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　退出</a>
+        <ul class="layui-nav right" lay-filter="" style="margin-right:50px;">
+		 <image src="images/tx.jpg" style="width:30px;border-radius: 100%;"/>
+          <li class="layui-nav-item">
+            <a href="javascript:;" style="color:#808c91;font-size:20px;text-decoration:none;">admin</a>
+          </li>
+        </ul> 
+			<div class="tab-panel" style="margin-top:30px;background-color:#f2f2f2">	
+	  <div class="x-body" >
+				<section class="aui-myOrder-content" style="width:90%;margin-left:5%;margin-top:30px;margin-bottom:30px;border:2px solid #e3e3e3">
+		<div class="m-tab demo-small-pitch" data-ydui-tab  >
+			<div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;" >
+				<ul class="tab-nav"  >
+					<li class="tab-nav-item tab-active"  ><a href="javascript:;" style="text-decoration:none;"><p style="font-size:18px;">所有企业</p></a></li>
+					<li class="tab-nav-item"><a href="javascript:;"   style="text-decoration:none;" ><p style="font-size:18px;">孵化企业</p></a></li>										
+				</ul>
+			</div>			
+			<div class="tab-panel">
+		   <div class="tab-panel-item tab-active">
+            <section class="aui-flexView">   
+           <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+  <div class="row" style="padding:5px 0 5px 0 ">
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" placeholder="请输入要查询的关键字" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                </div>
+                            </div>
+							 <div class="col-sm-9">
+                               <a class="right fa fa-upload"  onclick="method1('table1')"  style="font-size:15px;margin-right:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出列表</a>
+                            </div>	
+                        </div>
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="table1">
+                            <thead>
+                                <tr style="border:0px solid transparent;background-color:#d2deec;"  >
+                                    <th style="text-align:center"> <input type="checkbox"    class="i-checks"  id="GetList" name="input[]">　孵化企业</th>
+                                    <th style="text-align:center">企业名称</th>
+                                    <th style="text-align:center">企业法人</th>
+                                    <th style="text-align:center">联系方式</th>
+                                </tr>
+                            </thead>
+                            <tbody id="main_body">
+                                <tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr>
+								<tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr><tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"  align="center">
+									<p style="padding:0 61px 0 0"><input type="checkbox"   class="i-checks" name="input[]"></p></td>
+                                    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" >上海同年科技股份有限公司</td>
+									    <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >测试法人</td>
+										 <td  style="vertical-align:middle;padding:0px;border:0px solid transparent;" align="center" >123123456321</td>
+                                </tr>
+                            </tbody>
+							
+                        </table>
+								<div class="col-sm-6" style="margin-top:-37px;">
+                                 <button type="button" class="btn btn-sm btn-default" style="padding:5px 30px 5px 30px;border:1px solid #8795a4">发送账号</button> 
+                                  <button type="button" class="btn btn-sm btn-default"  onclick="zhanghao()" style="padding:5px 30px 5px 30px;border:1px solid #8795a4">账号列表</button> 
+                                   <button type="button" class="btn btn-sm btn-default" onclick="nianbao()"  style="padding:5px 30px 5px 30px;border:1px solid #8795a4">年报列表</button> 
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	  
+			
+			  
+			  
+    
+    </section> 		
+				</div>
+				<div class="tab-panel-item">
+					<section class="aui-flexView"> 
+           <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                  
+                    <div class="ibox-content">
+ <div class="row" style="padding:5px 0 5px 0 ">
+                            <div class="col-sm-1 m-b-xs">
+                                <select class="input-sm form-control input-s-sm inline" id="year">
+                                </select>
+                            </div>
+							<div class="col-sm-1 m-b-xs" style="width:10%">
+                                <select class="input-sm form-control input-s-sm inline" >
+								<option value="已审批">已审批</option>
+								<option value="未审批">未审批</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" placeholder="请输入要查询的关键字" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                </div>
+                            </div>
+							 <div class="col-sm-6" style="width:56%">
+                               <a class="right fa fa-upload" onclick="method1('table2')"  style="font-size:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出列表</a>
+                            </div>	
+                        </div>
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="table2">
+                            <thead>
+                                <tr style="border:0px solid transparent;background-color:#d2deec;"  >
+                                    <th style="text-align:center;width:30%">企业名称</th>
+                                    <th style="text-align:center">企业入驻时间</th>
+                                    <th style="text-align:center">企业所属技术领域</th>
+                                    <th style="text-align:center">在孵企业总收入</th>
+									  <th style="text-align:center;width:14%">在孵企业从业人数</th>
+									    <th style="text-align:center;width:15%">当年知识产权申请数</th>
+										  <th style="text-align:center">状态</th>
+										   <th style="text-align:center">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;">淮安市焦点科技网络有限公司</td>
+                                    <td  style="vertical-align:middle;padding:0px;" align="center"  >2018-11-8</td>
+									    <td  style="vertical-align:middle;padding:0px;" align="center" >新能源与节能</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" >10万元</td>
+										 <td  style="vertical-align:middle;padding:0px" align="center" >10人</td>
+										 <td  style="vertical-align:middle;padding:0px" align="center" >10件</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" >已审批</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" ><p style="color:#01AAED;cursor: pointer;" onclick="list()">查看表单</p></td>
+                                </tr>        <tr class="gradeX"  >
+                                    <td  style="vertical-align:middle;padding:0px;line-height:50px;">淮安市焦点科技网络有限公司</td>
+                                    <td  style="vertical-align:middle;padding:0px;" align="center"  >2018-11-8</td>
+									    <td  style="vertical-align:middle;padding:0px;" align="center" >新能源与节能</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" >10万元</td>
+										 <td  style="vertical-align:middle;padding:0px" align="center" >10人</td>
+										 <td  style="vertical-align:middle;padding:0px" align="center" >10件</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" >已审批</td>
+										 <td  style="vertical-align:middle;padding:0px;" align="center" ><p style="color:#01AAED;cursor: pointer;" onclick="list()">查看表单</p></td>
+                                </tr> 
+                            </tbody>
+							
+                        </table>
+							
+                    </div>
+                </div>
+            </div>
+        </div>
+	  
+	  
+    </section> 
+   </div>		
+ </div>   
+	</section>
+        </div>  
+		</div>
+		</div>
+		</div>
+		   <div class="modal fade" id="pwd" tabindex="-1" role="dialog" aria-hidden="true"  style=" position:absolute;top:50%;left:50%;margin-top:-250px;margin-left:-250px;width:500px;height:500px;">
+                    
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">修改密码</h4>
+                            </div><br>
+					<div style="width:80%;margin-left:10%">		
+                  <input  type="password" class="form-control input-sm m-b-10" placeholder="请输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password1" >
+				  <p style="margin-top:10px;margin-bottom:30px;">6-20个字符，只能包含字母，数字以及标点符号(除空格)</p>
+                     <input type="password" class="form-control input-sm m-b-10" placeholder="请再次输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password2" >
+					  <p style="display:none;color:red;margin-top:10px;margin-bottom:30px;">密码输入的不一样，请重新输入</p>
+                            <button type="submit" class="btn btn-primary" style="display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;">确定</button>
+                        </div>
+                        </div>
+                    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	  <script src="./lib/layui/layui.js" charset="utf-8"></script>
+	  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+	 <script type="text/javascript" src="./js/xadmin.js"></script>
+	     <script src="js/icheck.min.js"></script>
+		     <script src="js/js/jquery.dataTables.js"></script>
+    <script src="js/js/dataTables.bootstrap.js"></script>
+		 <script type="text/javascript" src="js/aui.js"></script>
+		 <script type="text/javascript" src="js/export.js"></script>
+		   <script src="js/common.js"></script>
+    </body>
+	 <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'icheckbox_square-green',
+            });
+			 $('.dataTables-example').dataTable();
+			  var date=new Date;
+ var year=date.getFullYear();
+ var yearhtml="<option value="+year+">"+year+"</option>";
+for(var a= 0;a<50;a++){
+year = year-1;
+yearhtml+="<option value="+year+">"+year+"</option>"
+} 
+ document.getElementById("year").innerHTML=yearhtml;
+$("#GetList").parent('div').children("ins").attr("onclick","allview()")
+      })
+      function allview(){
+      		var oTable = $('.table-striped').dataTable();
+            var oSettings = oTable.fnSettings();
+            	//var lint = oSettings._iDisplayStart;
+            if(document.getElementById("GetList").checked==true){
+            	for(var a = 0;a<10;a++){
+            		$("#main_body").find(".icheckbox_square-green").eq(a).addClass("checked");
+            	}
+            }else{
+            		for(var a = 0;a<10;a++){
+            			$("#main_body").find(".icheckbox_square-green").eq(a).removeClass("checked");
+            	}
+            }
+      }
+      
+      
+      function zhanghao(){
+	window.location.href="info.html";
+}
+
+function nianbao(){
+	window.location.href="admin.html";
+}
+function list(){
+	window.open("enteradmin.html");      
+}
+
+  
+    </script>
+</html>

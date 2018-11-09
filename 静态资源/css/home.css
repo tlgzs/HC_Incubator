@@ -1,0 +1,146 @@
+
+/* 我的订单 列表 */
+
+.tab-nav {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	z-index: 0;
+}
+.tab-nav-item.tab-active:before {
+	content: '';
+	width: 70%;
+	height: 2px;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	margin-left: -35%;
+	z-index: 4;
+	background-color: currentColor;
+}
+
+.tab-nav-item {
+	width: 1%;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	position: relative;
+	text-align: center;
+	color: #585858;
+	font-size: 0.8rem;
+	height: 4.5rem;
+	line-height: 4.5rem;
+	display: block;
+	background-color: #FFF;
+}
+
+.tab-nav-item a {
+	display: inherit;
+	color: inherit;
+}
+
+.tab-panel {
+	position: relative;
+	overflow: hidden;
+	background-color: #FFF;
+}
+
+.tab-panel .tab-panel-item {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding: 0.24rem;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.tab-panel .tab-panel-item.tab-active {
+	position: relative;
+	-webkit-transition: -webkit-transform .15s;
+	transition: -webkit-transform .15s;
+	transition: transform .15s;
+	transition: transform .15s, -webkit-transform .15s;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.tab-nav-item.tab-active {
+	color: #38aae1;
+}
+
+.aui-list-title-btn {
+	text-align: left;
+	padding: 10px 10px 20px 0;
+	position: relative;
+}
+
+.aui-list-title-btn a {
+	display: inline-block;
+	width: 65px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 11px;
+	color: #666;
+	text-align: center;
+	border: 1px solid #999;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-left: 5px;
+}
+
+.aui-list-title-btn .red-color {
+	border: 1px solid #FF5E53;
+	color: #fff;
+}
+
+.aui-list-title-info .aui-list-product-fl-img {
+	width: 4.5rem;
+}
+
+.aui-list-title-info .aui-well {
+	padding: 5px 11px;
+	position: relative;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.aui-list-title-info .aui-well-bd {
+	font-size: 12px;
+	font-weight: normal;
+	color: #222;
+}
+
+.aui-list-title-info .aui-well-ft {
+	padding-right: 0;
+	color: #222;
+	font-size: 12px;
+}
+
+/* 设置 */
+.aui-product-set {
+	position: relative;
+}
+
+.aui-out {
+	padding: 20px 10px;
+}
+
+.aui-out a {
+	width: 100%;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 14px;
+	color: #FF5E53;
+	border: 1px solid #FF5E53;
+	border-radius: 3px;
+	display: block;
+}
+
+.aui-product-set a {
+	background: #fff;
+}
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>淮安留学人员创业园</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		 <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/message.css" rel="stylesheet" type="text/css"/>
+		 <link rel="stylesheet" href="css/font.css">
+		   <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" href="css/xadmin.css">
+		 <link rel="shortcut icon" href="favicon.ico"> 
+		<link href="css/custom.css" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+	  <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    </head>
+    <body >
+	<style>
+	.layui-table th,.layui-table td{
+	line-height:25px;
+}
+hr{
+color:#bec4db
+}
+.layui-table td,.layui-table th{
+border:1px solid #bec4db
+}
+.table-striped td,.table-striped th{
+border:1px solid #bec4db
+}
+
+.rowhide{
+display:none
+}
+</style>
+	    <div class="container"  style="width:80%;min-width:1200px;margin-top:20px;">
+        <div class="logo" style="width:30%;display:inline;"> <image src="images/logo.png" style=""/></div>
+		   <a class="fa fa-cog right"   data-toggle="modal" href="#pwd"   style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　设置</a>
+		<a class="fa fa-power-off right"  onclick="tuichu()" style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　退出</a>
+		
+        <ul class="layui-nav right" lay-filter="" style="margin-right:50px;">
+		 <image src="images/tx.jpg" style="width:30px;border-radius: 100%;"/>
+          <li class="layui-nav-item">
+		 
+            <a href="javascript:;" style="color:#808c91;font-size:20px;text-decoration:none;">admin</a>
+          <!--  <dl class="layui-nav-child"> 
+              <dd style="margin-bottom:10px;"><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
+              <dd style="margin-bottom:10px;"><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+              <dd><a href="./login.html">退出</a></dd>
+            </dl>  -->
+          </li>
+        </ul>
+			<div class="tab-panel" style="margin-top:30px;background-color:#f2f2f2">
+	</section>
+	  <div class="x-body">
+				<section class="aui-myOrder-content" style="width:90%;margin-left:5%;margin-top:30px;margin-bottom:30px;border:2px solid #e3e3e3">
+		<div class="m-tab demo-small-pitch" data-ydui-tab  >
+			<div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;" >
+				<ul class="tab-nav"  >
+					<li class="tab-nav-item tab-active"  ><a href="javascript:;" style="text-decoration:none;"><p style="font-size:18px;">企业信息</p></a></li>
+					<li class="tab-nav-item"><a href="javascript:;"   style="text-decoration:none;" ><p style="font-size:18px;">年报数据</p></a></li>										
+				</ul>
+			</div>			
+			<div class="tab-panel">
+		   <div class="tab-panel-item tab-active">
+			
+            <section class="aui-flexView"> 
+        	  
+      <table class="layui-table" style="margin-top:10px;"  >
+             
+                <tbody >
+                    <tr style="border-top:7px solid #74a3dc">
+                        <th width="24%"  >企业名称<br>TDF7L120</th>
+                        <td colspan="3"  id="TDF7L120"></td>
+                    </tr>
+                    <tr>
+                        <td>组织机构代码或统一社会信用代码<br>TDF7L108</td>
+                        <td colspan="3"  id="TDF7L108"></td>
+                    </tr>
+					<tr>
+                        <td >企业成立时间<br>TDF7L100</td>
+                        <td  width="32%" id="TDF7L100"></td>
+						  <td width="20%" >企业入驻时间<br>TDF7L101</td>
+                        <td  id="TDF7L101"></td>
+                    </tr>					  <tr>
+                       <td>企业所属技术领域<br>TDF7L121</td>
+                       <td colspan="3" id="TDF7L121">
+                                    <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="电子信息" id="inlineCheckbox1">电子信息</label>
+                                    <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="先进制造" id="inlineCheckbox2">先进制造</label>
+                                    <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="航空航天" id="inlineCheckbox3">航空航天</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="现代交通" id="inlineCheckbox4">现代交通</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="生物医药与医疗器械" id="inlineCheckbox5">生物医药与医疗器械</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="新材料" id="inlineCheckbox6">新材料</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="新能源与节能" id="inlineCheckbox7">新能源与节能</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="环境保护" id="inlineCheckbox8">环境保护</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="地球、空间与海洋" id="inlineCheckbox9">地球、空间与海洋</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="核应用技术" id="inlineCheckbox10">核应用技术</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="现代农药" id="inlineCheckbox11">现代农药</label>
+								</td>
+                    </tr>
+ <tr>
+                       <td>企业纳税人类型<br>TDF7L116</td>
+                       <td id="TDF7L116">  <label class="checkbox-inline i-checks ">
+                                        <input type="radio"  value="option1" name="inlineCheckbox1">一般纳税人　　</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="radio"  value="option1" name="inlineCheckbox1">小规模纳税人</label></td>
+					    <td width="20%">是否高新技术企业<br>TDF7L101</td>
+                        <td id="TDF7L101"> <label class="checkbox-inline i-checks ">
+                                        <input type="radio"  value="option1" name="inlineCheckbox2">　是</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="radio"  value="option1" name="inlineCheckbox2">　否</label></td>
+                    </tr>
+					 <tr><td rowspan="2">企业主要负责人创业特征<br>TDF7L117</td>
+					 <td rowspan="2" id="TDF7L117">
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">大学生创业　　</label>
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">大企业离职人员</label><br>
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">留学归国人员　</label>
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">机关事业单位离职人员</label><br>
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">高校科研所人员</label>
+										<label class="checkbox-inline i-checks">
+                                        <input type="checkbox" value="option11" id="inlineCheckbox11">其他</label>
+										</td>
+					 <td style="width:23%">企业主要负责人是否为连续创业者<br>TDF7L118</td>
+					 <td style="width:17%" id="TDF7L118"><label class="checkbox-inline i-checks ">
+                                        <input type="radio"  value="option1" name="inlineCheckbox3">　是</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="radio"  value="option1" name="inlineCheckbox3">　否</label></td>
+					 </tr>
+					 <tr>
+					 <td>企业主要负责人性别<br>TDF7L119</td>
+					 <td id="TDF7L119"><label class="checkbox-inline i-checks ">
+                                        <input type="radio"  value="option1" name="inlineCheckbox4">　男</label>
+										  <label class="checkbox-inline i-checks">
+                                        <input type="radio"  value="option1" name="inlineCheckbox4">　女</label></td>
+					 </tr>
+					
+                </tbody>
+            </table >
+            <table class="layui-table">
+			<tbody >
+			 <tr style="border:0px solid transparent;background-color:#f0f5fb">
+                        <td width="25%" style="border:0px solid transparent;text-align:center" >指标名称</td>
+                        <td width="33%" style="border:0px solid transparent;text-align:center" >计量单位</td>
+						  <td width="24%" style="border:0px solid transparent;text-align:center">代码</td>
+                        <td  width="18%" style="border:0px solid transparent;text-align:center">数量</td>
+                    </tr>
+					<tr>
+					<td style="text-align:center">甲</td>
+					<td style="text-align:center">乙</td>
+					<td style="text-align:center">丙</td>
+					<td style="text-align:center" >1</td>
+					</tr>
+					<tr>
+					<td style="text-align:center">获天使或风险投资额</td>
+					<td style="text-align:center">千元</td>
+					<td style="text-align:center">TDF7L102</td>
+					<td style="text-align:center"  id="TDF7L102"></td>
+					</tr>
+					<tr>
+					<td style="text-align:center">占用孵化地场地面积</td>
+					<td style="text-align:center">平方米</td>
+					<td style="text-align:center">TDF7L109</td>
+					<td style="text-align:center"  id="TDF7L109"></td>
+					</tr>
+					<tr>
+					<td style="text-align:center">企业成立时注册资本</td>
+					<td style="text-align:center">千元</td>
+					<td style="text-align:center">TDF7L110</td>
+					<td style="text-align:center"  id="TDF7L110"></td>
+					</tr>
+			</tbody>
+			</table>
+           
+			<div style="text-align:center; width:100%;height:100%;margin-top:50px;margin-bottom:50px; " >
+			</div>
+    </section> 		
+				</div>
+				<div class="tab-panel-item">
+					<section class="aui-flexView"> 
+           <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+  <div class="row" style="padding:5px 0 5px 0 ">
+                            <div class="col-sm-2 m-b-xs">
+                                <select class="input-sm form-control input-s-sm inline" id="year">
+                                </select>
+                            </div>
+							 <div class="col-sm-10">
+                               <a class="right fa fa-upload"  onclick="method1('table1')" style="font-size:15px;margin-right:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出</a>
+                            </div>	
+                        </div>
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="table1">
+                            <thead>
+                                <tr style="border:0px solid transparent;background-color:#d2deec;"  >
+                                    <th style="text-align:center">企业名称</th>
+                                    <th style="text-align:center">年度</th>
+                                    <th style="text-align:center">状态</th>
+                                    <th style="text-align:center">上报时间</th>
+                                    <th style="text-align:center">审批时间</th>
+									 <th style="text-align:center">操作人</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">Trident</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p><p>201年</p></p><hr style="width:420%">
+									<p>2017年</p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p>2017年</p>
+									<hr style="width:420%"><p><p>2017年</p></p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p style="margin-bottom:10px;"><p>2017年</p></p></td>
+								 <td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+								<p style="height:27px;padding:11px;">测试</p><hr><p style="height:27px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:19px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								</td>
+									    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td>
+									<td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td>
+									<td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td>
+                                </tr>
+								 <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">Trident</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p><p>2017年</p></p><hr style="width:420%">
+									<p>2017年</p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p>2017年</p>
+									<hr style="width:420%"><p><p>2017年</p></p><hr style="width:420%"><p>2017年</p><hr style="width:420%"><p style="margin-bottom:10px;"><p>2017年</p></p></td>
+								 <td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+								<p style="height:27px;padding:11px;">测试</p><hr><p style="height:27px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:19px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								<p style="height:31px;padding:17px;">测试</p><hr><p style="height:25px">测试</p>
+								</td>
+									    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td>
+									<td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td>
+									<td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center">
+									<p style="margin-top:10px;">2018年</p><hr>
+									2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr>2017年<hr><p style="margin-bottom:10px;">2018年</p></td> 
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+	  
+	  
+    </section> 
+   </div>		
+ </div>   
+	</section>
+	
+	
+	
+	
+          
+
+        </div>  
+		</div>
+		</div>
+		</div>
+		   <div class="modal fade" id="pwd" tabindex="-1" role="dialog" aria-hidden="true"  style=" position:absolute;top:50%;left:50%;margin-top:-250px;margin-left:-250px;width:500px;height:500px;">
+                    
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">修改密码</h4>
+                            </div><br>
+					<div style="width:80%;margin-left:10%">		
+                  <input  type="password" class="form-control input-sm m-b-10" placeholder="请输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password1" >
+				  <p style="margin-top:10px;margin-bottom:30px;">6-20个字符，只能包含字母，数字以及标点符号(除空格)</p>
+                     <input type="password" class="form-control input-sm m-b-10" placeholder="请再次输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password2" >
+					  <p style="display:none;color:red;margin-top:10px;margin-bottom:30px;">密码输入的不一样，请重新输入</p>
+                            <button type="submit" class="btn btn-primary" style="display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;">确定</button>
+                        </div>
+                        </div>
+                    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	  <script src="./lib/layui/layui.js" charset="utf-8"></script>
+	  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+	 <script type="text/javascript" src="./js/xadmin.js"></script>
+	     <script src="js/icheck.min.js"></script>
+		     <script src="js/jquery.dataTables.js"></script>
+    <script src="js/dataTables.bootstrap.js"></script>
+		 <script type="text/javascript" src="js/aui.js"></script>
+		  <script src="js/export.js"></script>
+		    <script src="js/common.js"></script>
+    </body>
+	 <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'icheckbox_square-green',
+            });
+			 $('.dataTables-example').dataTable();
+			
+			     var date=new Date;
+ var year=date.getFullYear();
+ var yearhtml="<option value="+year+">"+year+"年</option>";
+for(var a= 0;a<50;a++){
+year = year-1;
+yearhtml+="<option value="+year+">"+year+"年</option>"
+} 
+ document.getElementById("year").innerHTML=yearhtml;
+        });
+		
+		
+ 
+ 
+
+
+ 
+    </script>
+</html>

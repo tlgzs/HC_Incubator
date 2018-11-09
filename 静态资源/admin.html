@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>淮安留学人员创业园</title>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+		 <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="css/message.css" rel="stylesheet" type="text/css"/>
+		 <link rel="stylesheet" href="css/font.css">
+		   <link rel="stylesheet" type="text/css" href="css/home.css">
+        <link rel="stylesheet" href="css/xadmin.css">
+		 <link rel="shortcut icon" href="favicon.ico"> 
+		<link href="css/css/custom.css" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+	  <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    </head>
+    <body >
+	<style>
+	.layui-table th,.layui-table td{
+	line-height:25px;
+}
+.layui-table td,.layui-table th{
+border:1px solid #bec4db
+}
+.rowhide{
+display:none
+}
+
+.gradeX{
+border:0px solid transparent;
+}
+</style>
+	    <div class="container"  style="width:80%;min-width:1200px;margin-top:20px;">
+        <div class="logo" style="width:30%;display:inline;"> <image src="images/logo.png" style=""/></div>
+		   <a class="fa fa-cog right"  data-toggle="modal" href="#pwd" style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　设置</a>
+		<a class="fa fa-power-off right" onclick="tuichu()" style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　退出</a>
+		
+        <ul class="layui-nav right" lay-filter="" style="margin-right:50px;">
+		 <image src="images/tx.jpg" style="width:30px;border-radius: 100%;"/>
+          <li class="layui-nav-item">
+		 
+            <a href="javascript:;" style="color:#808c91;font-size:20px;text-decoration:none;">admin</a>
+          </li>
+        </ul> 
+		
+			<div class="tab-panel" style="margin-top:20px;background-color:#f2f2f2">	
+<p style="margin-left:5%;margin-top:20px;font-size:15px; cursor: pointer;" onclick="fanhui()">所有企业><a style="color:#86bfe6;text-decoration:none;font-size:15px">年度数据列表</a></p>
+	  <div class="x-body" style="width:90%;margin-left:5%;margin-top:10px;margin-bottom:30px;border:2px solid #e3e3e3;background-color:#fff" >
+				<div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                  
+                    <div class="ibox-content">
+  <div class="row" style="padding:5px 0 5px 0 ">
+                            <div class="col-sm-2 m-b-xs">
+                                <select class="input-sm form-control input-s-sm inline" id="year">
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="input-group">
+                                    <input type="text" placeholder="请输入公司名称" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                </div>
+                            </div>
+							 <div class="col-sm-7">
+                               <a class="right fa fa-upload"   onclick="method1('table1')" style="font-size:15px;margin-right:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出列表</a>
+                            </div>	
+                        </div>
+                        <table class="table table-striped table-bordered table-hover dataTables-example" id="table1">
+                            <thead>
+                                <tr style="border:0px solid transparent;background-color:#d2deec;"  >
+                                    <th style="text-align:center">企业名称</th>
+                                    <th style="text-align:center">年度</th>
+                                    <th style="text-align:center">状态</th>
+                                    <th style="text-align:center">上报时间</th>
+                                    <th style="text-align:center">审批时间</th>
+									 <th style="text-align:center">操作人</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>
+								  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>  <tr class="gradeX" >
+                                    <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                    <td   style="vertical-align:middle;line-height:60px;padding:0px;"  align="center"><p><p>2018年</p></p></td>
+									<td   style="padding:0px; width:30%"  align="center">
+								<p style="height:31px;padding:12px;">测试</p><hr><p style="height:31px">测试</p>
+
+								</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+									   <td  style="vertical-align:middle;padding:0px;"  align="center">测试企业</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>  
+		</div>
+		</div>
+		</div>
+		   <div class="modal fade" id="pwd" tabindex="-1" role="dialog" aria-hidden="true"  style=" position:absolute;top:50%;left:50%;margin-top:-250px;margin-left:-250px;width:500px;height:500px;">
+                    
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title">修改密码</h4>
+                            </div><br>
+					<div style="width:80%;margin-left:10%">		
+                  <input  type="password" class="form-control input-sm m-b-10" placeholder="请输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password1" >
+				  <p style="margin-top:10px;margin-bottom:30px;">6-20个字符，只能包含字母，数字以及标点符号(除空格)</p>
+                     <input type="password" class="form-control input-sm m-b-10" placeholder="请再次输入新的密码"  readonly onfocus="this.removeAttribute('readonly');"  id="password2" >
+					  <p style="display:none;color:red;margin-top:10px;margin-bottom:30px;">密码输入的不一样，请重新输入</p>
+                            <button type="submit" class="btn btn-primary" style="display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;">确定</button>
+                        </div>
+                        </div>
+                    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	  <script src="./lib/layui/layui.js" charset="utf-8"></script>
+	  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+	 <script type="text/javascript" src="./js/xadmin.js"></script>
+	     <script src="js/icheck.min.js"></script>
+		     <script src="js/js/jquery.dataTables.js"></script>
+    <script src="js/js/dataTables.bootstrap.js"></script>
+     <script src="js/export.js"></script>
+       <script src="js/common.js"></script>
+    </body>
+	 <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'icheckbox_square-green',
+            });
+			 $('.dataTables-example').dataTable();
+			  var date=new Date;
+ var year=date.getFullYear();
+ var yearhtml="<option value="+year+">"+year+"年</option>";
+for(var a= 0;a<50;a++){
+year = year-1;
+yearhtml+="<option value="+year+">"+year+"年</option>"
+} 
+ document.getElementById("year").innerHTML=yearhtml;
+        });
+		
+		
+       function fanhui(){
+	window.location.href="list.html";
+}
+ 
+
+
+ 
+    </script>
+</html>
