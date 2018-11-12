@@ -20,15 +20,16 @@
     </div>
     <div class="login-userinfo float-left" style="margin-top: 50px;">
         <h4>淮安留创园后台管理系统</h4>
+        <form action="{:url('index/Index/dologin')}" method="post">
         <!-- 用户名 -->
         <div class="login-username clearfix">
             <i class="iconfont icon-people_fill float-left"></i>
-            <input class="float-left login-input" type="text" id="username" placeholder="用户名" required>
+            <input class="float-left login-input" type="text" id="username" name="username" placeholder="用户名" required>
         </div>
         <!-- 密码 -->
         <div class="login-password clearfix">
             <i class="iconfont icon-lock_fill float-left"></i>
-            <input class="float-left login-input" type="password" id="password" placeholder="请输入密码" required>
+            <input class="float-left login-input" type="password" id="password" name="password" placeholder="请输入密码" required>
         </div>
         <!-- 验证码
         <div class="login-yzm clearfix">
@@ -42,6 +43,7 @@
         <button onclick="check()" class="login-login">
             <span class="">登录</span>
         </button>
+        </form>
     </div>
 </div>
 <footer>
