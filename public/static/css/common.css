@@ -1,0 +1,264 @@
+
+/* 首页样式 */
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(119,136,153, .3)
+}
+.index-layout{
+    max-width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.index-logo{
+    display: block;
+}
+.index-logo>img{
+    height: 40px;
+}
+
+.user-info{
+    height: 40px;
+}
+.user-info span{
+    color: #667690;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.user-info img{
+    height: 100%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.user-info a{
+    margin-left: 45px;
+    font-size: 15px;
+}
+.user-name{
+    padding: 10px;
+}
+
+.index-banner{
+    margin-top: 30px;
+}
+.index-banner img{
+    width: 100%;
+}
+
+/* 首页选择区域样式 */
+.index-choose {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 55px;
+}
+.index-common-box{
+    height: 340px;
+    width: 240px;
+}
+.all-enterprise-bg{
+    background-color: #86d2c8;
+}
+.all-enterprise{
+    position: relative;
+    top: -26px;
+    left: -26px;
+    background-color: #fff;
+}
+.support-enterprise-bg{
+    background-color: #86b6e6;
+}
+.support-enterprise{
+    position: relative;
+    top: -26px;
+    left: -26px;
+    background-color: #fff;
+}
+.index-enterprise,.index-support-enterprise{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: #667690;
+}
+.index-enterprise>p,.index-support-enterprise>p{
+    margin-top: 80px;
+    font-weight: 600;
+}
+.index-enterprise:hover,.index-support-enterprise:hover{
+    color: #46bdff;
+}
+
+/* 底部样式 */
+footer{
+    text-align: center;
+    color: #333;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+footer p{
+    margin: 0;
+}
+footer img{
+    width: 38px;
+    vertical-align: middle;
+}
+footer a{
+    color: #333;
+    text-decoration: none;
+}
+
+
+/* 所有企业样式 */
+.breadcrumbs a{
+    color: #333;
+    font-size: 12px;
+}
+.breadcrumbs a.active{
+    color: #39a1db;
+}
+
+.all_enterprise{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.enterprise-search{
+    margin-left: 20px;
+    border: 1px solid #dee5f1;
+}
+
+/* 所有企业表格样式 */
+/*隐藏掉我们模型的checkbox*/
+.my_protocol .input_agreement_protocol {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    display: none;
+}
+/*未选中时*/        
+.my_protocol .input_agreement_protocol+span {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    display: inline-block;
+    background: url(../img/icon_checkbox.png) no-repeat;
+    background-position-x: 0px;
+    background-position-y: -25px;
+    position: relative;
+    top: 3px;
+    margin-right: 4px;
+}
+/*选中checkbox时,修改背景图片的位置*/            
+.my_protocol .input_agreement_protocol:checked+span {
+    background-position: 0 0px
+}
+
+
+.common-table{
+    min-width: 1160px;
+    margin-top: 20px;
+    font-size: 13px;
+    border-spacing: 0;
+}
+.common-table tr td{
+    padding: 15px 0;
+}
+.common-table thead{
+    background-color: #d3deec;
+    text-align: center;
+}
+
+.common-table tbody{
+    text-align: center;
+}
+.common-table tbody tr td:nth-child(1),.common-table tbody tr td:nth-child(2){
+    text-align: left;
+}
+.common-table tbody tr td:nth-child(1){
+    padding-left: 44px;
+}
+.common-table tbody tr:nth-child(even){
+    background-color: #fbfcfd;
+}
+.common-table tbody tr:hover{
+    background-color: #dcf2fe;
+}
+
+.enterprise-foot{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.supprot-table tbody tr td:nth-child(1),.supprot-table tbody tr td:nth-child(2){
+    text-align: center;
+}
+.supprot-table tbody tr td:nth-child(5){
+    text-align: left;
+}
+.supprot-table tbody tr td:nth-child(1){
+    padding-left: 0px;
+}
+.supprot-table tbody tr:nth-child(even){
+    background-color: #fbfcfd;
+}
+.supprot-table tbody tr:hover{
+    background-color: #dcf2fe;
+}
+
+
+
+
+
+
+
+
+/* 分页样式 */
+.pagination-btn{
+    padding: 0.06rem 0.10rem;
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    color: #999;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 44px;
+    font-size: 12px;
+    text-align: center;
+}
+.pagination-wrap{
+    position: relative;
+    display: inline-block;
+    padding-left: 0px;
+}
+.pagination-ellipsis{
+    color: #999;
+    position: relative;
+    top: -5px;
+    display: inline-block;
+    padding: 0 0.12rem;
+    margin-right: 4px;
+}
+.pagination-current{
+    background-color: #39a1db;
+    border: 1px solid #39a1db;
+    color:#fff;
+}
+.pagination-disabled{
+    cursor: not-allowed;
+}
+#pagination-next,#pagination-prev{
+    padding-right:0.08rem;
+    padding-left:0.08rem;
+}
+.pagenum{
+    overflow: hidden;white-space: nowrap;text-overflow: ellipsis;vertical-align: middle;
+}
