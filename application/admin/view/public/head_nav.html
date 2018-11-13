@@ -1,0 +1,37 @@
+<div class="logo" style="width:30%;display:inline;">
+    <image src="images/logo.png" style=""/>
+</div>
+<a class="fa fa-cog right" data-toggle="modal" href="#pwd"
+   style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　设置</a>
+<a class="fa fa-power-off right" data-toggle="modal" href="{:url('Index/index/logout')}"
+   style="margin-right:50px;font-size:20px;padding:13px 0px 0px 0px;color:#808c91;text-decoration:none;">　退出</a>
+<ul class="layui-nav right" lay-filter="" style="margin-right:50px;">
+    <image src="images/tx.jpg" style="width:30px;border-radius: 100%;"/>
+    <li class="layui-nav-item">
+        <a href="javascript:;" style="color:#808c91;font-size:20px;text-decoration:none;">{$user_info.username}</a>
+    </li>
+</ul>
+
+<div class="modal fade" id="pwd" tabindex="-1" role="dialog" aria-hidden="true"
+     style=" position:absolute;top:50%;left:50%;margin-top:-250px;margin-left:-250px;width:500px;height:500px;">
+    <form action="{:url('Index/index/changePwd')}">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">修改密码</h4>
+            </div>
+            <br>
+            <div style="width:80%;margin-left:10%">
+                <input type="password" class="form-control input-sm m-b-10" placeholder="请输入新的密码" readonly
+                       onfocus="this.removeAttribute('readonly');" id="password1" name="password1">
+                <p style="margin-top:10px;margin-bottom:30px;">6-20个字符，只能包含字母，数字以及标点符号(除空格)</p>
+                <input type="password" class="form-control input-sm m-b-10" placeholder="请再次输入新的密码" readonly
+                       onfocus="this.removeAttribute('readonly');" id="password2" name="password2">
+                <p style="display:none;color:red;margin-top:10px;margin-bottom:30px;">密码输入的不一样，请重新输入</p>
+                <button type="submit" class="btn btn-primary"
+                        style="display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;">确定
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
