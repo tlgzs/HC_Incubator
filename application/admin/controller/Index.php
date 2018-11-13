@@ -3,6 +3,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\EnterpriseList;
+use app\admin\model\IncubateList;
 
 /**
  * Class Index
@@ -27,6 +28,19 @@ class Index extends AdminBase
 
     public function selectIncubate()
     {
-        \halt(\input());
+        $input = \input();
+        $ids = $input['data'];
+        foreach ($ids as $id) {
+            $sqldata[] = [
+                'incubate_id' => $id,
+            ];
+        }
+        $model = new IncubateList();
+        $res = $model->saveAll($sqldata);
+        if ($res) {
+            return \json(['code' => 1, 'msg' => 'Ok']);
+        } else {
+            return \json(['code' => 0, 'msg' => 'Fail']);
+        }
     }
 }

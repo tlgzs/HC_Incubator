@@ -78,7 +78,7 @@
                                                             <p style="padding:0 61px 0 0">
                                                                 <input type="checkbox"
                                                                        class="i-checks"
-                                                                       name="input[]" value="{$v.id}"></p>
+                                                                       name="id" value="{$v.id}"></p>
                                                         </td>
                                                         <td style="vertical-align:middle;padding:0px;border:0px solid transparent;text-align: center">
                                                             {$v.enterprise_list_name}
@@ -94,9 +94,9 @@
                                                     </tbody>
 
                                                 </table>
-                                                <div class="col-sm-6" style="margin-top:-37px;">
+                                                <div class="col-sm-10" style="margin-top:-37px;">
                                                     <button type="button" class="btn btn-sm btn-default"
-                                                            style="padding:5px 30px 5px 30px;border:1px solid #8795a4">
+                                                            style="padding:5px 30px 5px 30px;border:1px solid #8795a4" onclick="selectEnterprise()">
                                                         选择企业
                                                     </button>
                                                     <button type="button" class="btn btn-sm btn-default"
@@ -109,16 +109,18 @@
                                                             style="padding:5px 30px 5px 30px;border:1px solid #8795a4">
                                                         年报列表
                                                     </button>
+                                                    <div style="float: right;">
+                                                        {$list|raw}
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    {$list|raw}
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </section>
                         </div>
+
                         <div class="tab-panel-item">
                             <section class="aui-flexView">
                                 <div class="row">
@@ -294,6 +296,32 @@
         window.open("enteradmin.html");
     }
 
-
+    // 选择企业并且发送请求给后台
+    function selectEnterprise() {
+        var ids = [];
+        $("input[type='checkbox']:checked").each(function () {
+            ids.push($(this).val());
+        });
+        console.log(ids);
+        $.ajax({
+            type: 'post',
+            url: "{:url('admin/Index/selectIncubate')}",
+            async: true,
+            data: {
+                data: ids
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.code == 1) {
+                    layer.msg('操作成功');
+                } else {
+                    layer.msg('操作失败');
+                }
+            },
+            error: function () {
+                layer.msg('系统异常');
+            }
+        });
+    }
 </script>
 </html>
