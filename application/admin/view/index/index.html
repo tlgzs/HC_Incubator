@@ -73,6 +73,11 @@
                                                     <tbody id="main_body">
                                                     {foreach $list as $v}
                                                     <tr class="gradeX">
+                                                        {if check_incubate($v.id)}
+                                                        <td style="border: none; text-align: center;font-weight: bold">
+                                                            已是孵化企业
+                                                        </td>
+                                                        {else /}
                                                         <td style="vertical-align:middle;padding:0px;line-height:50px;border:0px solid transparent;width:15%"
                                                             align="center">
                                                             <p style="padding:0 61px 0 0">
@@ -80,6 +85,7 @@
                                                                        class="i-checks"
                                                                        name="id" value="{$v.id}"></p>
                                                         </td>
+                                                        {/if}
                                                         <td style="vertical-align:middle;padding:0px;border:0px solid transparent;text-align: center">
                                                             {$v.enterprise_list_name}
                                                         </td>
@@ -94,7 +100,7 @@
                                                     </tbody>
 
                                                 </table>
-                                                <div class="col-sm-10" style="margin-top:-37px;">
+                                                <div class="col-sm-8" style="margin-top: 20px" >
                                                     <button type="button" class="btn btn-sm btn-default"
                                                             style="padding:5px 30px 5px 30px;border:1px solid #8795a4" onclick="selectEnterprise()">
                                                         选择企业
@@ -109,11 +115,13 @@
                                                             style="padding:5px 30px 5px 30px;border:1px solid #8795a4">
                                                         年报列表
                                                     </button>
-                                                    <div style="float: right;">
-                                                        {$list|raw}
-                                                    </div>
+
                                                 </div>
-                                                
+                                                <div class="col-sm-4"  >
+                                                <div style="float: right;">
+                                                    {$list|raw}
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -126,28 +134,32 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="ibox float-e-margins">
-
+                                            <form action="{:url('admin/Index/index')}" method="post">
                                             <div class="ibox-content">
                                                 <div class="row" style="padding:5px 0 5px 0 ">
                                                     <div class="col-sm-1 m-b-xs">
-                                                        <select class="input-sm form-control input-s-sm inline"
-                                                                id="year">
+                                                        <select class="input-sm form-control input-s-sm inline" name="year">
+                                                            {foreach $years as $y}
+                                                            <option value="{$y}">{$y}</option>
+                                                            {/foreach}
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-1 m-b-xs" style="width:10%">
-                                                        <select class="input-sm form-control input-s-sm inline">
-                                                            <option value="已审批">已审批</option>
-                                                            <option value="未审批">未审批</option>
+                                                        <select class="input-sm form-control input-s-sm inline" name="status">
+                                                            <option value="">审批状态</option>
+                                                            <option value="2">已审批</option>
+                                                            <option value="1">未审批</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="input-group">
                                                             <input type="text" placeholder="请输入要查询的关键字"
-                                                                   class="input-sm form-control"> <span
+                                                                   class="input-sm form-control" name="key2"> <span
                                                                 class="input-group-btn">
-                                        <button type="button" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                        <button type="submit" class="btn btn-sm btn-primary"> 搜索</button> </span>
                                                         </div>
                                                     </div>
+                                                    </form>
                                                     <div class="col-sm-6" style="width:56%">
                                                         <a class="right fa fa-upload" onclick="method1('table2')"
                                                            style="font-size:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出列表</a>
@@ -168,9 +180,10 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                                    {foreach $incubate_list as $il}
                                                     <tr class="gradeX">
-                                                        <td style="vertical-align:middle;padding:0px;line-height:50px;">
-                                                            淮安市焦点科技网络有限公司
+                                                        <td style="vertical-align:middle;padding:0px;line-height:50px;text-align: center">
+                                                            {$il.incubate_name}
                                                         </td>
                                                         <td style="vertical-align:middle;padding:0px;" align="center">
                                                             2018-11-8
@@ -194,32 +207,8 @@
                                                                 style="color:#01AAED;cursor: pointer;" onclick="list()">
                                                             查看表单</p></td>
                                                     </tr>
-                                                    <tr class="gradeX">
-                                                        <td style="vertical-align:middle;padding:0px;line-height:50px;">
-                                                            淮安市焦点科技网络有限公司
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            2018-11-8
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            新能源与节能
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            10万元
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px" align="center">
-                                                            10人
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px" align="center">
-                                                            10件
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            已审批
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center"><p
-                                                                style="color:#01AAED;cursor: pointer;" onclick="list()">
-                                                            查看表单</p></td>
-                                                    </tr>
+                                                    {/foreach}
+
                                                     </tbody>
 
                                                 </table>
@@ -256,36 +245,11 @@
             checkboxClass: 'icheckbox_square-green',
             radioClass: 'icheckbox_square-green',
         });
-        $('.dataTables-example').dataTable();
-        var date = new Date;
-        var year = date.getFullYear();
-        var yearhtml = "<option value=" + year + ">" + year + "</option>";
-        for (var a = 0; a < 50; a++) {
-            year = year - 1;
-            yearhtml += "<option value=" + year + ">" + year + "</option>"
-        }
-        document.getElementById("year").innerHTML = yearhtml;
         $("#GetList").parent('div').children("ins").attr("onclick", "allview()")
     })
 
-    function allview() {
-        var oTable = $('.table-striped').dataTable();
-        var oSettings = oTable.fnSettings();
-        //var lint = oSettings._iDisplayStart;
-        if (document.getElementById("GetList").checked == true) {
-            for (var a = 0; a < 10; a++) {
-                $("#main_body").find(".icheckbox_square-green").eq(a).addClass("checked");
-            }
-        } else {
-            for (var a = 0; a < 10; a++) {
-                $("#main_body").find(".icheckbox_square-green").eq(a).removeClass("checked");
-            }
-        }
-    }
-
-
     function zhanghao() {
-        window.location.href = "info.html";
+        window.location.href = "{:url('admin/Index/accountInfo')}";
     }
 
     function nianbao() {
@@ -302,7 +266,12 @@
         $("input[type='checkbox']:checked").each(function () {
             ids.push($(this).val());
         });
-        console.log(ids);
+        if (ids.length<1){
+            layer.alert('请选择企业',{
+                icon: 5,
+                title:"提示",
+            });
+        }
         $.ajax({
             type: 'post',
             url: "{:url('admin/Index/selectIncubate')}",
@@ -314,13 +283,14 @@
             success: function (data) {
                 if (data.code == 1) {
                     layer.msg('操作成功');
+                    location.reload();
                 } else {
                     layer.msg('操作失败');
                 }
             },
-            error: function () {
+            /*error: function () {
                 layer.msg('系统异常');
-            }
+            }*/
         });
     }
 </script>
