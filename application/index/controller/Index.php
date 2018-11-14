@@ -44,7 +44,7 @@ class Index extends Controller
         } elseif ($res) {
             //如果是企业就进入企业后台
             \session('enterprise_id', $res['id']);
-            $this->redirect('admin/Enterprise/index');
+            $this->redirect('Enterprise/Index/index');
         } else {
             $this->error('登录失败,请联系管理员');
         }
@@ -55,7 +55,7 @@ class Index extends Controller
      */
     public function logout(){
         \session(null);
-        $this->redirect('/');
+        $this->redirect('index/Index/index');
     }
 
     /**

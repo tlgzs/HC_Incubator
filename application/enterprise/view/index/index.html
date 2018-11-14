@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="public/head_script" /}
+</head>
+<body>
+<style>
+    .layui-table th, .layui-table td {
+        line-height: 25px;
+    }
+
+    hr {
+        color: #bec4db
+    }
+
+    .layui-table td, .layui-table th {
+        border: 1px solid #bec4db
+    }
+
+    .table-striped td, .table-striped th {
+        border: 1px solid #bec4db
+    }
+
+    .rowhide {
+        display: none
+    }
+</style>
+<div class="container" style="width:80%;min-width:1200px;margin-top:20px;">
+    {include file="public/head_nav" /}
+    <div class="tab-panel" style="margin-top:30px;background-color:#f2f2f2">
+        <div class="x-body">
+            <section class="aui-myOrder-content"
+                     style="width:90%;margin-left:5%;margin-top:30px;margin-bottom:30px;border:2px solid #e3e3e3">
+                <div class="m-tab demo-small-pitch" data-ydui-tab>
+                    <div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;">
+                        <ul class="tab-nav">
+                            <li class="tab-nav-item tab-active"><a href="javascript:;" style="text-decoration:none;"><p
+                                    style="font-size:18px;">企业信息</p></a></li>
+                            <li class="tab-nav-item"><a href="javascript:;" style="text-decoration:none;"><p
+                                    style="font-size:18px;">年报数据</p></a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-panel">
+                        <form action="{:url('enterprise/Index/addInfo')}" method="post">
+                            <div class="tab-panel-item tab-active">
+
+                                <section class="aui-flexView">
+
+                                    <table class="layui-table" style="margin-top:10px;">
+
+                                        <tbody>
+                                        <tr style="border-top:7px solid #74a3dc">
+                                            <th width="24%">企业名称<br>TDF7L120</th>
+                                            <td colspan="3" id="TDF7L120">
+                                                <input type="text" class="form-control" name="TDF7L120" value="{$i_info.incubate_name}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>组织机构代码或统一社会信用代码<br>TDF7L108</td>
+                                            <td colspan="3" id="TDF7L108">
+                                                <input type="text" class="form-control" name="TDF7L108" value="{$i_info.TDF7L108}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>企业成立时间<br>TDF7L100</td>
+                                            <td width="32%" id="TDF7L100">
+                                                <input type="date" class="form-control" name="TDF7L100" value="{$i_info.TDF7L100}">
+                                            </td>
+                                            <td width="20%">企业入驻时间<br>TDF7L101</td>
+                                            <td id="TDF7L101">
+                                                <input type="date" class="form-control" name="TDF7L101" value="{$i_info.TDF7L101}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>企业所属技术领域<br>TDF7L121</td>
+                                            <td colspan="3" id="TDF7L121">
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="1"
+                                                           id="inlineCheckbox1" name="TDF7L121[]" {in name="1" value="$i_info.TDF7L121"}checked{/in}>电子信息</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="2"
+                                                           id="inlineCheckbox2" name="TDF7L121[]" {in name="2" value="$i_info.TDF7L121"}checked{/in}>先进制造</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="3"
+                                                           id="inlineCheckbox3" name="TDF7L121[]" {in name="3" value="$i_info.TDF7L121"}checked{/in}>航空航天</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="4"
+                                                           id="inlineCheckbox4" name="TDF7L121[]" {in name="4" value="$i_info.TDF7L121"}checked{/in}>现代交通</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="5" id="inlineCheckbox5" name="TDF7L121[]" {in name="5" value="$i_info.TDF7L121"}checked{/in}>生物医药与医疗器械</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="6" id="inlineCheckbox6" name="TDF7L121[]" {in name="6" value="$i_info.TDF7L121"}checked{/in}>新材料</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="7"
+                                                           id="inlineCheckbox7" name="TDF7L121[]" {in name="7" value="$i_info.TDF7L121"}checked{/in}>新能源与节能</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="8"
+                                                           id="inlineCheckbox8" name="TDF7L121[]" {in name="8" value="$i_info.TDF7L121"}checked{/in}>环境保护</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="9"
+                                                           id="inlineCheckbox9" name="TDF7L121[]" {in name="9" value="$i_info.TDF7L121"}checked{/in}>地球、空间与海洋</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="10"
+                                                           id="inlineCheckbox10" name="TDF7L121[]" {in name="10" value="$i_info.TDF7L121"}checked{/in}>核应用技术</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="11"
+                                                           id="inlineCheckbox11" name="TDF7L121[]" {in name="11" value="$i_info.TDF7L121"}checked{/in}>现代农药</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>企业纳税人类型<br>TDF7L116</td>
+                                            <td id="TDF7L116"><label class="checkbox-inline i-checks ">
+                                                <input type="radio" value="1"
+                                                       name="TDF7L116" {in name="1" value="$i_info.TDF7L116"}checked{/in}>一般纳税人　　</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="radio" value="2"
+                                                           name="TDF7L116" {in name="2" value="$i_info.TDF7L117"}checked{/in}>小规模纳税人</label></td>
+                                            <td width="20%">是否高新技术企业<br>TDF7L105</td>
+                                            <td id="TDF7L105"><label class="checkbox-inline i-checks ">
+                                                <input type="radio" value="1" name="TDF7L105" {in name="1" value="$i_info.TDF7L105"}checked{/in}>　是</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="radio" value="0"
+                                                           name="TDF7L105" {in name="0" value="$i_info.TDF7L105"}checked{/in}>　否</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">企业主要负责人创业特征<br>TDF7L117</td>
+                                            <td rowspan="2" id="TDF7L117">
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="1"
+                                                           id="TDF7L117" name="TDF7L117[]" {in name="1" value="$i_info.TDF7L117"}checked{/in}>大学生创业　　</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="2"
+                                                           id="TDF7L117" name="TDF7L117[]" {in name="2" value="$i_info.TDF7L117"}checked{/in}>大企业离职人员</label><br>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="3"
+                                                           id="TDF7L117" name="TDF7L117[]" {in name="3" value="$i_info.TDF7L117"}checked{/in}>留学归国人员　</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="4" id="TDF7L117" name="TDF7L117[]" {in name="4" value="$i_info.TDF7L117"}checked{/in}>机关事业单位离职人员</label><br>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="5"
+                                                           id="TDF7L117" name="TDF7L117[]" {in name="5" value="$i_info.TDF7L117"}checked{/in}>高校科研所人员</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="checkbox" value="6"
+                                                           id="TDF7L117" name="TDF7L117[]" {in name="6" value="$i_info.TDF7L117"}checked{/in}>其他</label>
+                                            </td>
+                                            <td style="width:23%">企业主要负责人是否为连续创业者<br>TDF7L118</td>
+                                            <td style="width:17%" id="TDF7L118"><label
+                                                    class="checkbox-inline i-checks ">
+                                                <input type="radio" value="1" name="TDF7L118" {in name="1" value="$i_info.TDF7L118"}checked{/in}>　是</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="radio" value="0"
+                                                           name="TDF7L118" {in name="0" value="$i_info.TDF7L118"}checked{/in}>　否</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>企业主要负责人性别<br>TDF7L119</td>
+                                            <td id="TDF7L119"><label class="checkbox-inline i-checks ">
+                                                <input type="radio" value="1" name="TDF7L119" {in name="1" value="$i_info.TDF7L119"}checked{/in}>　男</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <input type="radio" value="0"
+                                                           name="TDF7L119" {in name="0" value="$i_info.TDF7L119"}checked{/in}>　女</label>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <table class="layui-table">
+                                        <tbody>
+                                        <tr style="border:0px solid transparent;background-color:#f0f5fb">
+                                            <td width="25%" style="border:0px solid transparent;text-align:center">
+                                                指标名称
+                                            </td>
+                                            <td width="33%" style="border:0px solid transparent;text-align:center">
+                                                计量单位
+                                            </td>
+                                            <td width="24%" style="border:0px solid transparent;text-align:center">代码
+                                            </td>
+                                            <td width="18%" style="border:0px solid transparent;text-align:center">数量
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center">甲</td>
+                                            <td style="text-align:center">乙</td>
+                                            <td style="text-align:center">丙</td>
+                                            <td style="text-align:center">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center">获天使或风险投资额</td>
+                                            <td style="text-align:center">千元</td>
+                                            <td style="text-align:center">TDF7L102</td>
+                                            <td style="text-align:center" id="TDF7L102">
+                                                <input type="text" class="form-control" name="TDF7L102" value="{$i_info.TDF7L102}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center">占用孵化地场地面积</td>
+                                            <td style="text-align:center">平方米</td>
+                                            <td style="text-align:center">TDF7L109</td>
+                                            <td style="text-align:center" id="TDF7L109">
+                                                <input type="text" class="form-control" name="TDF7L109" value="{$i_info.TDF7L109}">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:center">企业成立时注册资本</td>
+                                            <td style="text-align:center">千元</td>
+                                            <td style="text-align:center">TDF7L110</td>
+                                            <td style="text-align:center" id="TDF7L110">
+                                                <input type="text" class="form-control" name="TDF7L110" value="{$i_info.TDF7L110}">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div style="text-align:center; width:100%;height:100%;margin-top:50px;margin-bottom:50px; ">
+                                        <input type="hidden" name="enterprise_id" value="{$info.username|get_enterprise_id_by_enterprise_name}">
+                                        <button class="btn btn-sm btn-primary" type="submit">提交</button>
+                                        <button class="btn btn-sm btn-danger" type="reset">重置</button>
+                                    </div>
+                                </section>
+                            </div>
+                        </form>
+                        <div class="tab-panel-item">
+                            <section class="aui-flexView">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="ibox float-e-margins">
+                                            <div class="ibox-content">
+                                                <div class="row" style="padding:5px 0 5px 0 ">
+                                                    <div class="col-sm-2 m-b-xs">
+                                                        <select class="input-sm form-control input-s-sm inline"
+                                                                id="year">
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <a class="right fa fa-upload" onclick="method1('table1')"
+                                                           style="font-size:15px;margin-right:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出</a>
+                                                    </div>
+                                                </div>
+                                                <table class="table table-striped table-bordered table-hover dataTables-example"
+                                                       id="table1">
+                                                    <thead>
+                                                    <tr style="border:0px solid transparent;background-color:#d2deec;">
+                                                        <th style="text-align:center">企业名称</th>
+                                                        <th style="text-align:center">年度</th>
+                                                        <th style="text-align:center">状态</th>
+                                                        <th style="text-align:center">上报时间</th>
+                                                        <th style="text-align:center">审批时间</th>
+                                                        <th style="text-align:center">操作人</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="gradeX">
+                                                        <td style="vertical-align:middle;padding:0px;" align="center">
+                                                            Trident
+                                                        </td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p>
+                                                            <p>201年</p></p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>
+                                                            <p>2017年</p></p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p style="margin-bottom:10px;">
+                                                            <p>2017年</p></p></td>
+                                                        <td style="padding:0px; width:30%" align="center">
+                                                            <p style="height:31px;padding:12px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:31px">测试</p>
+                                                            <p style="height:27px;padding:11px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:27px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:19px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                        </td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                    </tr>
+                                                    <tr class="gradeX">
+                                                        <td style="vertical-align:middle;padding:0px;" align="center">
+                                                            Trident
+                                                        </td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p>
+                                                            <p>2017年</p></p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p>
+                                                            <p>2017年</p></p>
+                                                            <hr style="width:420%">
+                                                            <p>2017年</p>
+                                                            <hr style="width:420%">
+                                                            <p style="margin-bottom:10px;">
+                                                            <p>2017年</p></p></td>
+                                                        <td style="padding:0px; width:30%" align="center">
+                                                            <p style="height:31px;padding:12px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:31px">测试</p>
+                                                            <p style="height:27px;padding:11px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:27px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:19px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                            <p style="height:31px;padding:17px;">测试</p>
+                                                            <hr>
+                                                            <p style="height:25px">测试</p>
+                                                        </td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                        <td style="vertical-align:middle;line-height:60px;padding:0px;"
+                                                            align="center">
+                                                            <p style="margin-top:10px;">2018年</p>
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            2017年
+                                                            <hr>
+                                                            <p style="margin-bottom:10px;">2018年</p></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </section>
+                        </div>
+                    </div>
+            </section>
+
+
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="./lib/layui/layui.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="./js/xadmin.js"></script>
+<script src="js/icheck.min.js"></script>
+<script src="js/jquery.dataTables.js"></script>
+<script src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/aui.js"></script>
+<script src="js/export.js"></script>
+<script src="js/common.js"></script>
+</body>
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'icheckbox_square-green',
+        });
+        $('.dataTables-example').dataTable();
+
+        var date = new Date;
+        var year = date.getFullYear();
+        var yearhtml = "<option value=" + year + ">" + year + "年</option>";
+        for (var a = 0; a < 50; a++) {
+            year = year - 1;
+            yearhtml += "<option value=" + year + ">" + year + "年</option>"
+        }
+        document.getElementById("year").innerHTML = yearhtml;
+    });
+
+
+</script>
+</html>

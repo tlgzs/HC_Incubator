@@ -1,3 +1,3 @@
 function tuichu(){
-	window.location.href="index.html";
+	window.location.href="{:url('index/Index/logout')}";
 }

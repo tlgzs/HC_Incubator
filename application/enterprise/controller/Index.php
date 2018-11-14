@@ -1,10 +1,47 @@
 <?php
+
 namespace app\enterprise\controller;
 
-class Index
+
+use app\admin\model\IncubateList;
+
+/**
+ * Class Index
+ * @package app\enterprise\controller
+ */
+class Index extends EnterpriseBase
 {
+
+    /**
+     * @return mixed
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function index()
     {
-        return '<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px;} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:) </h1><p> ThinkPHP V5.1<br/><span style="font-size:30px">12载初心不改（2006-2018） - 你值得信赖的PHP框架</span></p></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=64890268" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="eab4b9f840753f8e7"></think>';
+        $session = \session('enterprise_id');
+        $incubate_info = \get_incubate_info_by_session($session);
+        $this->assign('i_info', $incubate_info);
+        return $this->fetch();
+    }
+
+    /**
+     *添加企业基本信息
+     */
+    public function addInfo()
+    {
+        $sqldata = \input();
+        $sqldata['TDF7L121'] = \implode(',', $sqldata['TDF7L121']);
+        $sqldata['TDF7L117'] = \implode(',', $sqldata['TDF7L117']);
+        $incubateModel = new IncubateList();
+        $res = $incubateModel
+            ->allowField(true)
+            ->save($sqldata, ['incubate_id' => $sqldata['enterprise_id']]);
+        if ($res) {
+            $this->success('保存成功');
+        } else {
+            $this->error('保存失败');
+        }
     }
 }
