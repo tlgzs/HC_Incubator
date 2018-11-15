@@ -70,6 +70,7 @@ class Index extends EnterpriseBase
         $sqldata = \input();
         $report_id = \input('id');
         $sqldata['fill_time'] = \time();
+        $sqldata['status']=2;
         if (Request::isPost()) {
             $annualModel = new AnnualReports();
             $res = $annualModel->allowField(true)->save($sqldata, ['id' => $sqldata['report_id']]);

@@ -28,11 +28,9 @@ class Index extends AdminBase
         $enterpriseModel = new EnterpriseList();
         $list = $enterpriseModel->getEnterpriseListByCondition($key);
 
-        //这里不应该是孵化企业列表,而应该是报表列表!!!  下次回来改
         $reportModel = new AnnualReports();
         $report_list = $reportModel->getReportListByCondition($year, $status, $key2);
 
-//        \halt($report_list);
         //年份的数组
         $min_year = Db::name('IncubateList')->min('create_time');
         $min_year = \date('Y', $min_year);
@@ -124,7 +122,11 @@ class Index extends AdminBase
         }
     }
 
+
     public function checkReport(){
+        $report_id = \input('id');
+        $reporrDetail = AnnualReports::get($report_id);
+        $this->assign('d', $reporrDetail);
         return $this->fetch();
     }
 }

@@ -150,8 +150,9 @@
                                                             <select class="input-sm form-control input-s-sm inline"
                                                                     name="status">
                                                                 <option value="">审批状态</option>
-                                                                <option value="3">已审批</option>
+                                                                <option value="2">已提交</option>
                                                                 <option value="1">未审批</option>
+                                                                <option value="3">已审批</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-sm-3">
@@ -206,9 +207,13 @@
                                                 <td style="vertical-align:middle;padding:0px;" align="center">
                                                     {$il.status}
                                                 </td>
-                                                <td style="vertical-align:middle;padding:0px;" align="center"><p
-                                                        style="color:#01AAED;cursor: pointer;" onclick="list()">
-                                                    查看表单</p></td>
+
+                                                <td style="vertical-align:middle;padding:0px;" align="center">
+                                                    {if $il.status eq "已提交"}
+                                                    <a href="{:url('admin/Index/checkReport',['id'=>$il.id])}" style="color:#01AAED;cursor: pointer;">查看表单</a>
+                                                    {/if}
+                                                </td>
+
                                             </tr>
                                             {/foreach}
 
@@ -220,7 +225,6 @@
                                 </div>
                         </div>
                     </div>
-
 
             </section>
         </div>
@@ -257,10 +261,6 @@
 
     function nianbao() {
         window.location.href = "admin.html";
-    }
-
-    function list() {
-        window.open("enteradmin.html");
     }
 
     // 选择企业并且发送请求给后台
@@ -310,6 +310,7 @@
                 dataType: 'json',
                 success: function (data) {
                     if (data.code == 1) {
+                        location.reload();
                         layer.msg('操作成功');
                     } else {
                         layer.msg('操作失败');

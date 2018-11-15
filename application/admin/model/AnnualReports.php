@@ -47,6 +47,7 @@ class AnnualReports extends Model
             ->where($map)
             ->whereLike('incubate_name', '%' . $key . '%')
             ->whereBetweenTime('create_time', $year . '-' . '01' . '-' . '01', ($year + 1) . '-' . '01' . '-' . '01')
+            ->order('incubate_name')
             ->paginate(10);
         return $list;
     }
