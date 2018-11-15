@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-{include file="public/headscript" /}
+    {include file="public/headscript" /}
 </head>
 <body>
 <style>
@@ -22,7 +22,7 @@
     }
 </style>
 <div class="container" style="width:80%;min-width:1200px;margin-top:20px;">
-{include file="public/head_nav" /}
+    {include file="public/head_nav" /}
     <div class="tab-panel" style="margin-top:30px;background-color:#f2f2f2">
         <div class="x-body">
             <section class="aui-myOrder-content"
@@ -100,9 +100,10 @@
                                                     </tbody>
 
                                                 </table>
-                                                <div class="col-sm-8" style="margin-top: 20px" >
+                                                <div class="col-sm-8" style="margin-top: 20px">
                                                     <button type="button" class="btn btn-sm btn-default"
-                                                            style="padding:5px 30px 5px 30px;border:1px solid #8795a4" onclick="selectEnterprise()">
+                                                            style="padding:5px 30px 5px 30px;border:1px solid #8795a4"
+                                                            onclick="selectEnterprise()">
                                                         选择企业
                                                     </button>
                                                     <button type="button" class="btn btn-sm btn-default"
@@ -117,10 +118,10 @@
                                                     </button>
 
                                                 </div>
-                                                <div class="col-sm-4"  >
-                                                <div style="float: right;">
-                                                    {$list|raw}
-                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div style="float: right;">
+                                                        {$list|raw}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,96 +136,98 @@
                                     <div class="col-sm-12">
                                         <div class="ibox float-e-margins">
                                             <form action="{:url('admin/Index/index')}" method="post">
-                                            <div class="ibox-content">
-                                                <div class="row" style="padding:5px 0 5px 0 ">
-                                                    <div class="col-sm-1 m-b-xs">
-                                                        <select class="input-sm form-control input-s-sm inline" name="year">
-                                                            {foreach $years as $y}
-                                                            <option value="{$y}">{$y}</option>
-                                                            {/foreach}
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-1 m-b-xs" style="width:10%">
-                                                        <select class="input-sm form-control input-s-sm inline" name="status">
-                                                            <option value="">审批状态</option>
-                                                            <option value="2">已审批</option>
-                                                            <option value="1">未审批</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <div class="input-group">
-                                                            <input type="text" placeholder="请输入要查询的关键字"
-                                                                   class="input-sm form-control" name="key2"> <span
-                                                                class="input-group-btn">
-                                        <button type="submit" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                                <div class="ibox-content">
+                                                    <div class="row" style="padding:5px 0 5px 0 ">
+                                                        <div class="col-sm-1 m-b-xs">
+                                                            <select class="input-sm form-control input-s-sm inline"
+                                                                    name="year">
+                                                                {foreach $years as $y}
+                                                                <option value="{$y}">{$y}</option>
+                                                                {/foreach}
+                                                            </select>
                                                         </div>
-                                                    </div>
-                                                    </form>
-                                                    <div class="col-sm-6" style="width:56%">
-                                                        <a class="right fa fa-upload" onclick="method1('table2')"
-                                                           style="font-size:15px;color:#858fa2;padding:10px;text-decoration:none;">　导出列表</a>
-                                                    </div>
-                                                </div>
-                                                <table class="table table-striped table-bordered table-hover dataTables-example"
-                                                       id="table2">
-                                                    <thead>
-                                                    <tr style="border:0px solid transparent;background-color:#d2deec;">
-                                                        <th style="text-align:center;width:30%">企业名称</th>
-                                                        <th style="text-align:center">企业入驻时间</th>
-                                                        <th style="text-align:center">企业所属技术领域</th>
-                                                        <th style="text-align:center">在孵企业总收入</th>
-                                                        <th style="text-align:center;width:14%">在孵企业从业人数</th>
-                                                        <th style="text-align:center;width:15%">当年知识产权申请数</th>
-                                                        <th style="text-align:center">状态</th>
-                                                        <th style="text-align:center">操作</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    {foreach $incubate_list as $il}
-                                                    <tr class="gradeX">
-                                                        <td style="vertical-align:middle;padding:0px;line-height:50px;text-align: center">
-                                                            {$il.incubate_name}
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            2018-11-8
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            新能源与节能
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            10万元
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px" align="center">
-                                                            10人
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px" align="center">
-                                                            10件
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center">
-                                                            已审批
-                                                        </td>
-                                                        <td style="vertical-align:middle;padding:0px;" align="center"><p
-                                                                style="color:#01AAED;cursor: pointer;" onclick="list()">
-                                                            查看表单</p></td>
-                                                    </tr>
-                                                    {/foreach}
-
-                                                    </tbody>
-
-                                                </table>
-
+                                                        <div class="col-sm-1 m-b-xs" style="width:10%">
+                                                            <select class="input-sm form-control input-s-sm inline"
+                                                                    name="status">
+                                                                <option value="">审批状态</option>
+                                                                <option value="3">已审批</option>
+                                                                <option value="1">未审批</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="input-group">
+                                                                <input type="text" placeholder="请输入要查询的关键字"
+                                                                       class="input-sm form-control" name="key2"> <span
+                                                                    class="input-group-btn">
+                                        <button type="submit" class="btn btn-sm btn-primary"> 搜索</button> </span>
+                                                            </div>
+                                                        </div>
+                                            </form>
+                                            <div class="col-sm-6" style="width:56%">
+                                                <a class="right fa fa-upload" onclick="sendReport()"
+                                                   style="font-size:15px;color:#858fa2;padding:10px;text-decoration:none;">　发送年报</a>
                                             </div>
                                         </div>
+                                        <table class="table table-striped table-bordered table-hover dataTables-example"
+                                               id="table2">
+                                            <thead>
+                                            <tr style="border:0px solid transparent;background-color:#d2deec;">
+                                                <th style="text-align:center;width:30%">企业名称</th>
+                                                <th style="text-align:center">企业入驻时间</th>
+                                                <th style="text-align:center">企业所属技术领域</th>
+                                                <th style="text-align:center">在孵企业总收入</th>
+                                                <th style="text-align:center;width:14%">在孵企业从业人数</th>
+                                                <th style="text-align:center;width:15%">当年知识产权申请数</th>
+                                                <th style="text-align:center">状态</th>
+                                                <th style="text-align:center">操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {foreach $report_list as $il}
+                                            <tr class="gradeX">
+                                                <td style="vertical-align:middle;padding:0px;line-height:50px;text-align: center">
+                                                    {$il.incubate_name}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px;" align="center">
+                                                    {$il.incubate.TDF7L101}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px;" align="center">
+                                                    {$il.incubate.TDF7L121|get_TDF7L121_by_id}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px;" align="center">
+                                                    {$il.TDF7G210}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px" align="center">
+                                                    {$il.TDF7F600}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px" align="center">
+                                                    {$il.TDF7K500}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px;" align="center">
+                                                    {$il.status}
+                                                </td>
+                                                <td style="vertical-align:middle;padding:0px;" align="center"><p
+                                                        style="color:#01AAED;cursor: pointer;" onclick="list()">
+                                                    查看表单</p></td>
+                                            </tr>
+                                            {/foreach}
+
+                                            </tbody>
+
+                                        </table>
+
                                     </div>
                                 </div>
-
-
-                            </section>
                         </div>
                     </div>
+
+
             </section>
         </div>
     </div>
+    </section>
+</div>
+</div>
 </div>
 </div>
 
@@ -266,10 +269,10 @@
         $("input[type='checkbox']:checked").each(function () {
             ids.push($(this).val());
         });
-        if (ids.length<1){
-            layer.alert('请选择企业',{
+        if (ids.length < 1) {
+            layer.alert('请选择企业', {
                 icon: 5,
-                title:"提示",
+                title: "提示",
             });
         }
         $.ajax({
@@ -292,6 +295,32 @@
                 layer.msg('系统异常');
             }*/
         });
+    }
+
+    function sendReport() {
+        layer.confirm('确定要向企业发送填写报表要求吗?',{
+            btn:['确定','取消']
+        },function () {
+            layer.closeAll('dialog');
+
+            $.ajax({
+                type: 'post',
+                url: "{:url('admin/Index/sendReport')}",
+                data: {},
+                dataType: 'json',
+                success: function (data) {
+                    if (data.code == 1) {
+                        layer.msg('操作成功');
+                    } else {
+                        layer.msg('操作失败');
+                    }
+                },
+                error:function () {
+                    layer.msg('系统异常');
+                }
+            });
+            layer.closeAll('dialog');
+        })
     }
 </script>
 </html>

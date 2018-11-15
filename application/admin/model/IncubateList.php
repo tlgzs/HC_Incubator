@@ -22,11 +22,21 @@ class IncubateList extends Model
      */
     protected $autoWriteTimestamp = true;
 
+    /**
+     * @return \think\model\relation\HasOne
+     */
     public function incubateInfo()
     {
         return $this->hasOne('EnterpriseList', 'id', 'incubate_id');
     }
 
+    /**
+     * @param $year
+     * @param $status
+     * @param $key
+     * @return \think\Paginator
+     * @throws \think\exception\DbException
+     */
     public function getIncubateListByCondition($year, $status, $key)
     {
         $map = [];

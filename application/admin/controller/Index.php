@@ -2,6 +2,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\AnnualReports;
 use app\admin\model\EnterpriseList;
 use app\admin\model\IncubateList;
 use app\index\model\User;
@@ -28,8 +29,10 @@ class Index extends AdminBase
         $list = $enterpriseModel->getEnterpriseListByCondition($key);
 
         //这里不应该是孵化企业列表,而应该是报表列表!!!  下次回来改
-        $incubateModel = new IncubateList();
-        $incubate_list = $incubateModel->getIncubateListByCondition($year, $status, $key2);
+        $reportModel = new AnnualReports();
+        $report_list = $reportModel->getReportListByCondition($year, $status, $key2);
+
+//        \halt($report_list);
         //年份的数组
         $min_year = Db::name('IncubateList')->min('create_time');
         $min_year = \date('Y', $min_year);
@@ -37,7 +40,7 @@ class Index extends AdminBase
         for ($i = $min_year; $i <= $now_year; $i++) {
             $years[] = \intval($i);
         }
-        $this->assign('incubate_list', $incubate_list);
+        $this->assign('report_list', $report_list);
         $this->assign('years', $years);
         $this->assign('list', $list);
         return $this->fetch();
@@ -85,11 +88,43 @@ class Index extends AdminBase
     public function accountInfo()
     {
         $userModel = new User();
-        $key = \input('key','');
+        $key = \input('key', '');
         $list = $userModel->where('group', 2)
-            ->whereLike('username','%'.$key.'%')
+            ->whereLike('username', '%' . $key . '%')
             ->paginate(10);
         $this->assign('list', $list);
+        return $this->fetch();
+    }
+
+    /**
+     * @return \think\response\Json
+     * @throws \Exception
+     * 管理员发送填写年报要求
+     */
+    public function sendReport()
+    {
+        $modelAnnual = new AnnualReports();
+        $modelIncubate = new IncubateList();
+        $incubdate_ids = $modelIncubate->column('incubate_id');
+        foreach ($incubdate_ids as $id) {
+            $incubdate_name = Db::name('IncubateList')
+                ->where('incubate_id', $id)
+                ->value('incubate_name');
+            $sqldata[] = [
+                'incubate_id' => $id,
+                'incubate_name' => $incubdate_name,
+                'status' => 1,
+            ];
+        }
+        $res = $modelAnnual->saveAll($sqldata);
+        if ($res) {
+            return \json(['code' => 1, 'msg' => 'OK']);
+        } else {
+            return \json(['code' => 0, 'msg' => 'Fail']);
+        }
+    }
+
+    public function checkReport(){
         return $this->fetch();
     }
 }

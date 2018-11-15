@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="public/head_script" /}
+</head>
+<body>
+<style>
+    .layui-table th, .layui-table td {
+        line-height: 25px;
+    }
+
+    .layui-table td, .layui-table th {
+        border: 1px solid #bec4db
+    }
+
+    .rowhide {
+        display: none
+    }
+
+    .table-striped td, .table-striped th {
+        border: 1px solid #bec4db
+    }
+
+    .gradeX {
+        border: 0px solid transparent;
+    }
+
+    .table1 {
+        display:;
+    }
+
+    .table2 {
+        display: none;
+    }
+
+    .table3 {
+        display: none;
+    }
+</style>
+<div class="container" style="width:80%;min-width:1200px;margin-top:20px;">
+ {include file="public/head_nav" /}
+
+    <div class="tab-panel" style="margin-top:20px;background-color:#f2f2f2">
+        <div class="x-body"
+             style="width:90%;margin-left:5%;margin-top:50px;margin-bottom:30px;border:2px solid #e3e3e3;background-color:#fff">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+
+                        <div class="ibox-content">
+                            <div class="row" style="padding:5px 0 5px 0 ">
+
+                                <section class="aui-scrollView" style="background:#fff ;">
+                                    <div class="aui-coll-step  yd-step-theme1 clearfix">
+                                        <ul class="yd-step-content">
+                                            <li class="yd-step-item yd-step-item-current" id="yd1">
+                                                <em class="yd-step-checkmark">
+                                                    <i></i>
+                                                </em>
+                                                <div class="yd-step-item-top">
+                                                    <div class="yd-step-item-top-text">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="yd-step-item-bottom">
+                                                    <p>企业经济概况</p>
+                                                </div>
+                                            </li>
+
+                                            <li class="yd-step-item" id="yd2">
+                                                <em class="yd-step-checkmark">
+                                                    <i></i>
+                                                </em>
+                                                <div class="yd-step-item-top">
+                                                    <div class="yd-step-item-top-text">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="yd-step-item-bottom">
+                                                    <p>企业从业人员情况</p>
+
+                                                </div>
+                                            </li>
+                                            <li class="yd-step-item" id="yd3">
+                                                <em class="yd-step-checkmark">
+                                                    <i></i>
+                                                </em>
+                                                <div class="yd-step-item-top">
+                                                    <div class="yd-step-item-top-text">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="yd-step-item-bottom">
+                                                    <p>企业知识产权情况</p>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <form action="{:url('enterprise/Index/editReport')}" method="post">
+                            <input type="hidden" name="report_id" value="{$report.id}">
+                            <table class="table table-striped table-bordered table-hover dataTables-example">
+                                <thead>
+                                <tr style="border:0px solid transparent;background-color:#f1fafe;border-top:7px solid #74a3dc;height:80px;">
+                                    <th style="text-align:center;vertical-align:middle;width:30%">指标名称</th>
+                                    <th style="text-align:center;vertical-align:middle;width:30%">计量单位</th>
+                                    <th style="text-align:center;vertical-align:middle;width:20%">代码</th>
+                                    <th style="text-align:center;width:20%;vertical-align:middle;">数量</th>
+                                </tr>
+                                </thead>
+                                <tbody id="main">
+                                <div>
+                                <tr class="gradeX table1">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;" align="center"><p
+                                            style="margin-left:10px">甲</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">乙</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">丙</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">丁</td>
+                                </tr>
+                                <tr class="gradeX table1">
+
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业总收入</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7G210</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7G210" value="{$report.TDF7G210}">
+                                    </td>
+
+                                </tr>
+                                <tr class="gradeX table1">
+
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业净利润</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7G230</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7G230" value="{$report.TDF7G230}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table1">
+
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业出口总额</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7G250</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7G250" value="{$report.TDF7G250}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table1">
+
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业研究与试验发展(R&D)经费支出</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7G251</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7G251" value="{$report.TDF7G251}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table1">
+
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业实际上缴税费</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7G252</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7G252" value="{$report.TDF7G252}">
+                                    </td>
+                                </tr>
+
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">在孵企业从业人员</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F600</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F600" value="{$report.TDF7F600}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">其中:博士</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F601</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F601" value="{$report.TDF7F601}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">大专以上</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F604</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F604" value="{$report.TDF7F604}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">留学人员</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F603</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F603" value="{$report.TDF7F603}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">千人计划人数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F606</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F606" value="{$report.TDF7F606}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">吸纳应届大学毕业生</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">人</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7F607</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7F607" value="{$report.TDF7F607}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table2">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">是否人才计划</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center"><label
+                                            class="checkbox-inline i-checks ">
+                                        <input type="radio" value="1" name="tdc9001" {if $report.tdc9001 eq 1}checked{/if}>　是</label>
+                                        <label class="checkbox-inline i-checks">
+                                            <input type="radio" value="2" name="tdc9001" {if $report.tdc9001 eq 2}checked{/if}>　否</label></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">tdc9001</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="tdc9001N" value="{$report.tdc9001N}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">当年知识产权申请数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K500</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K500" value="{$report.TDF7K500}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">当年知识产权授权数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K502</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K502" value="{$report.TDF7K502}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">其中:发明专利</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K503</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K503" value="{$report.TDF7K503}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">拥有有效知识产权数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K516</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K516" value="{$report.TDF7K516}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:36px">其中:发明专利</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K517</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K517" value="{$report.TDF7K517}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:62px">软件著作权</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K518</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K518" value="{$report.TDF7K518}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:62px">植物新品种</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">个</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K519</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K519" value="{$report.TDF7K519}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:62px">集成电路布图</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">个</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K520</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K520" value="{$report.TDF7K520}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">与国内外高校.科研院所开展产学研合作的次数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">次</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">jdf001</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="jdf001" value="{$report.jdf001}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">购买国外专利</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">件</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K504</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K504" value="{$report.TDF7K504}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">技术合同交易数量</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">项</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K508</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K508" value="{$report.TDF7K508}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">技术合同交易额</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">千元</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K509</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K509" value="{$report.TDF7K509}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">当年承担国家级科技计划项目数</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">项</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K510</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K510" value="{$report.TDF7K510}">
+                                    </td>
+                                </tr>
+                                <tr class="gradeX table3">
+                                    <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
+                                            style="margin-left:10px">当年或者省级以上奖励</p></td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">项</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">TDF7K512</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">
+                                        <input type="text" class="form-control" name="TDF7K512" value="{$report.TDF7K512}">
+                                    </td>
+                                </tr>
+                                
+                                </tbody>
+
+                            </table>
+                                <div style="display: none;" id="go">
+                                        <button style="display:block;margin: 0 auto" type="submit" class="btn btn-primary btn-lg">提交</button>
+                                </div>
+                            </form>
+                            <div style="text-align:center; width:100%;height:100%;margin-top:50px;margin-bottom:50px; ">
+                                <button type="button" class="btn btn-primary  btn-lg" onclick="submit()" id="xia">下一项
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="./lib/layui/layui.js" charset="utf-8"></script>
+<script src="js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="./js/xadmin.js"></script>
+<script src="js/icheck.min.js"></script>
+<script src="js/common.js"></script>
+
+<script src="js/aui.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'icheckbox_square-green',
+        });
+
+
+    });
+
+
+    var sub = 1;
+
+    function submit() {
+        if (sub == 1) {
+            $("#yd2").addClass("yd-step-item-current");
+            $(".table1").attr("style", "display:none");
+            $(".table2").addClass("table1");
+            $(".table2").removeClass("table2");
+
+        } else if (sub == 2) {
+            $("#yd3").addClass("yd-step-item-current");
+            $(".table1").attr("style", "display:none");
+            $(".table3").removeClass("table3");
+            $("#xia").attr("style", "display: none;");
+            $("#go").attr("style", "dispaly:block;");
+        } else {
+
+        }
+        sub = sub + 1;
+    }
+
+
+    function niandu() {
+        window.location.href = "enterprise.html";
+    }
+
+
+</script>
+</body>
+
+</html>
