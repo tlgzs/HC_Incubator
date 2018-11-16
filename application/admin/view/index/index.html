@@ -31,7 +31,7 @@
                     <div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;">
                         <ul class="tab-nav">
                             <li class="tab-nav-item tab-active"><a href="javascript:;" style="text-decoration:none;"><p
-                                    style="font-size:18px;">所有企业</p></a></li>
+                                    style="font-size:18px;" onclick="location.reload()">所有企业</p></a></li>
                             <li class="tab-nav-item"><a href="javascript:;" style="text-decoration:none;"><p
                                     style="font-size:18px;">孵化企业</p></a></li>
                         </ul>
@@ -110,11 +110,6 @@
                                                             onclick="zhanghao()"
                                                             style="padding:5px 30px 5px 30px;border:1px solid #8795a4">
                                                         账号列表
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-default"
-                                                            onclick="nianbao()"
-                                                            style="padding:5px 30px 5px 30px;border:1px solid #8795a4">
-                                                        年报列表
                                                     </button>
 
                                                 </div>
@@ -257,10 +252,6 @@
 
     function zhanghao() {
         window.location.href = "{:url('admin/Index/accountInfo')}";
-    }
-
-    function nianbao() {
-        window.location.href = "admin.html";
     }
 
     // 选择企业并且发送请求给后台
