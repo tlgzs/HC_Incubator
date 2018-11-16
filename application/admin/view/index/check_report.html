@@ -38,7 +38,7 @@
     }
 </style>
 <div class="container" style="width:80%;min-width:1200px;margin-top:20px;">
- {include file="public/head_nav" /}
+    {include file="public/head_nav" /}
 
     <div class="tab-panel" style="margin-top:20px;background-color:#f2f2f2">
         <div class="x-body"
@@ -316,6 +316,12 @@
                                 <button type="button" class="btn btn-primary  btn-lg" onclick="submit()" id="xia">下一项
                                 </button>
                             </div>
+
+                            <div style="display: none" id="pass">
+                                <button style="display: block;margin: 0 auto" type="button"
+                                        class="btn btn-success btn-lg" onclick="pass({$d.id})">通过审批
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -358,6 +364,7 @@
             $(".table1").attr("style", "display:none");
             $(".table3").removeClass("table3");
             $("#xia").attr("style", "display: none;");
+            $("#pass").attr("style", "display:block;");
         } else {
 
         }
@@ -365,8 +372,27 @@
     }
 
 
-    function niandu() {
-        window.location.href = "enterprise.html";
+    function pass(id) {
+        $.ajax({
+            type: 'post',
+            url: "{:url('admin/Index/pass')}",
+            async: true,
+            data: {
+                id: id
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.code == 1) {
+                    layer.msg('操作成功');
+                    window.location.href = "{:url('admin/Index/index')}";
+                } else {
+                    layer.alert('操作失败');
+                }
+            },
+            error: function () {
+                layer.alert('系统故障,请联系管理员');
+            }
+        });
     }
 
 

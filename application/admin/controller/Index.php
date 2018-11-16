@@ -7,6 +7,7 @@ use app\admin\model\EnterpriseList;
 use app\admin\model\IncubateList;
 use app\index\model\User;
 use think\Db;
+use think\facade\Request;
 
 /**
  * Class Index
@@ -123,10 +124,41 @@ class Index extends AdminBase
     }
 
 
+    /**
+     * @return mixed
+     * @throws \think\Exception\DbException
+     * 查看年报
+     */
     public function checkReport(){
         $report_id = \input('id');
         $reporrDetail = AnnualReports::get($report_id);
         $this->assign('d', $reporrDetail);
         return $this->fetch();
+    }
+
+    /**
+     * @return \think\response\Json
+     * 审核通过年报
+     */
+    public function pass(){
+        if (Request::isAjax()){
+            $report_id = \input('id');
+            $fields = [
+                'status' => 3,
+                'check_time' => \time(),
+                'checker_id' => \session('admin_id'),
+            ];
+            $res = Db::name('AnnualReports')
+                ->where('id', $report_id)
+
+                ->setField($fields);
+            if ($res){
+                return \json(['code' => 1, 'msg' => 'OK']);
+            }else{
+                return \json(['code' => 0, 'msg' => 'Fail']);
+            }
+        }else{
+            return \json(['code' => 0, 'msg' => '提交方式不正确']);
+        }
     }
 }

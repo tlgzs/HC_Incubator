@@ -307,11 +307,18 @@
                                                         </td>
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;"
                                                             align="center">
-                                                            <p style="margin-top:10px;">{$l.fill_time|date=("Y-m-d H:i:s")}</p>
+                                                            {if $l.fill_time eq ''}
+                                                            <p style="margin-top: 10px">未填写</p>
+                                                            {else /}
+                                                            <p style="margin-top:10px;">{$l.fill_time|date=("Y-m-d H:i:s")}</p>{/if}
                                                         </td>
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;"
                                                             align="center">
+                                                            {if $l.check_time eq ""}
+                                                            <p style="margin-top: 10px">待审核</p>
+                                                            {else /}
                                                             <p style="margin-top:10px;">{$l.check_time|date=("Y-m-d H:i:s")}</p>
+                                                        {/if}
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;"
                                                             align="center">
                                                             <p style="margin-top:10px;">{$l.checker_id|get_user_name_by_id}</p>
