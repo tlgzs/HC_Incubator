@@ -312,7 +312,11 @@
                                 </tbody>
 
                             </table>
+
                             <div style="text-align:center; width:100%;height:100%;margin-top:50px;margin-bottom:50px; ">
+                                <button type="button" class="btn btn-default  btn-lg" onclick="submit_shang()"
+                                        id="shang">上一项
+                                </button>
                                 <button type="button" class="btn btn-primary  btn-lg" onclick="submit()" id="xia">下一项
                                 </button>
                             </div>
@@ -352,25 +356,53 @@
     });
 
 
+    //上一项的按钮默认不显示
+    $("#shang").hide();
+
+
     var sub = 1;
 
+    //下一项的按钮
     function submit() {
         if (sub == 1) {
             $("#yd2").addClass("yd-step-item-current");
             $(".table1").attr("style", "display:none");
             $(".table2").addClass("table1");
+            $(".table2").addClass("table2t");
             $(".table2").removeClass("table2");
+            $("#shang").show();
 
         } else if (sub == 2) {
             $("#yd3").addClass("yd-step-item-current");
             $(".table1").attr("style", "display:none");
+            $(".table3").addClass("table3t");
             $(".table3").removeClass("table3");
             $("#xia").attr("style", "display: none;");
-            $("#pass").attr("style", "display:block;");
+            $("#pass").attr("style", "display:inline;");
+
         } else {
 
         }
         sub = sub + 1;
+    };
+
+    //上一项的按钮
+    function submit_shang() {
+        if (sub == 2) {
+            $("#yd2").removeClass("yd-step-item-current");
+            $(".table1").css('display','');
+            $(".table2t").removeClass("table1");
+            $(".table2t").addClass("table2");
+            $("#shang").attr("style", "display:none;");
+            sub -= 1;
+        } else if (sub == 3) {
+            $("#yd3").removeClass("yd-step-item-current");
+            $(".table2t").css('display','');
+            $(".table3t").addClass("table3");
+            $("#xia").attr("style", "display: inline;");
+            $("#pass").attr("style", "display:none;");
+            sub -= 1;
+        }
     }
 
 
