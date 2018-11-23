@@ -251,7 +251,7 @@
                                             style="margin-left:62px">软件著作权</p></td>
                                     <td style="vertical-align:middle;padding:0px;" align="center">件</td>
                                     <td style="vertical-align:middle;padding:0px;" align="center">TDF7K518</td>
-                                    <td style="vertical-align:middle;padding:0px;" align="center">{{$d.TDF7K518}}</td>
+                                    <td style="vertical-align:middle;padding:0px;" align="center">{$d.TDF7K518}</td>
                                 </tr>
                                 <tr class="gradeX table3">
                                     <td style="vertical-align:middle;padding:0px;line-height:50px;"><p
@@ -317,11 +317,13 @@
                                 </button>
                             </div>
 
+                            {if $d.status neq "已审批"}
                             <div style="display: none" id="pass">
                                 <button style="display: block;margin: 0 auto" type="button"
                                         class="btn btn-success btn-lg" onclick="pass({$d.id})">通过审批
                                 </button>
                             </div>
+                            {/if}
                         </div>
                     </div>
                 </div>

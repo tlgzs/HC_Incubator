@@ -30,12 +30,13 @@
                 <div class="m-tab demo-small-pitch" data-ydui-tab>
                     <div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;">
                         <ul class="tab-nav">
-                            <li class="tab-nav-item tab-active"><a href="javascript:;" style="text-decoration:none;"><p
+                            <li class="tab-nav-item tab-active" id="tab-nav1"><a href="javascript:;" style="text-decoration:none;"><p
                                     style="font-size:18px;" onclick="location.reload()">所有企业</p></a></li>
-                            <li class="tab-nav-item"><a href="javascript:;" style="text-decoration:none;"><p
+                            <li class="tab-nav-item" id="tab-nav2"><a href="javascript:;" style="text-decoration:none;"><p
                                     style="font-size:18px;">孵化企业</p></a></li>
                         </ul>
                     </div>
+
                     <div class="tab-panel">
                         <div class="tab-panel-item tab-active">
                             <section class="aui-flexView">
@@ -204,7 +205,7 @@
                                                 </td>
 
                                                 <td style="vertical-align:middle;padding:0px;" align="center">
-                                                    {if $il.status eq "已提交"}
+                                                    {if $il.status neq "未填写"}
                                                     <a href="{:url('admin/Index/checkReport',['id'=>$il.id])}" style="color:#01AAED;cursor: pointer;">查看表单</a>
                                                     {/if}
                                                 </td>
@@ -289,7 +290,7 @@
     }
 
     function sendReport() {
-        layer.confirm('确定要向企业发送填写报表要求吗?',{
+        layer.confirm('确定向企业发送填写报表要求吗?',{
             btn:['确定','取消']
         },function () {
             layer.closeAll('dialog');

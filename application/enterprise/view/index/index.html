@@ -301,8 +301,10 @@
                                                         </td>
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;" align="center">
                                                             <p>{$l.status}</p>
-                                                            {if $l.status neq "已审批"}
-                                                            <a href="{:url('enterprise/Index/editReport',['id'=>$l.id])}">年报入口</a>
+                                                            {if $l.status eq "未填写"}
+                                                            <a style="color: red" href="{:url('enterprise/Index/editReport',['id'=>$l.id])}">填写年报</a>
+                                                            {elseif $l.status neq "未填写"}
+                                                            <a style="color: green" href="{:url('enterprise/Index/editReport',['id'=>$l.id])}">查看年报</a>
                                                             {/if}
                                                         </td>
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;"

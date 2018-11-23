@@ -369,9 +369,11 @@
                                 </tbody>
 
                             </table>
+                                {if $report.status neq "已审批"}
                                 <div style="display: none;" id="go">
                                         <button style="display:block;margin: 0 auto" type="submit" class="btn btn-primary btn-lg">提交</button>
                                 </div>
+                                {/if}
                             </form>
                             <div style="text-align:center; width:100%;height:100%;margin-top:50px;margin-bottom:50px; ">
                                 <button type="button" class="btn btn-primary  btn-lg" onclick="submit()" id="xia">下一项
