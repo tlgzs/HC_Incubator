@@ -53,7 +53,8 @@ class Index extends Controller
     /**
      *退出登录
      */
-    public function logout(){
+    public function logout()
+    {
         \session(null);
         $this->redirect('index/Index/index');
     }
@@ -61,21 +62,24 @@ class Index extends Controller
     /**
      *修改密码
      */
-    public function changePwd(){
+    public function changePwd()
+    {
         $admin_id = \session('admin_id');
         $enterprise_id = \session('enterprise_id');
         $pwd1 = \input('password1');
         $pwd2 = \input('password2');
-        if ($pwd1 !=$pwd2){
+        if ($pwd1 != $pwd2) {
             $this->error('两次密码不一致');
-        }else{
+        } elseif (empty($pwd1 && empty($pwd2))) {
+            $this->error('密码未修改');
+        } else {
             $res = Db::name('User')
                 ->where('id', 'eq', $admin_id)
                 ->whereOr('id', 'eq', $enterprise_id)
                 ->setField('password', $pwd2);
-            if ($res){
+            if ($res) {
                 $this->success('修改成功');
-            }else{
+            } else {
                 $this->error('修改失败');
             }
         }
