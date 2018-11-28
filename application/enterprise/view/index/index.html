@@ -304,7 +304,7 @@
                                                             {if $l.status eq "未填写"}
                                                             <a style="color: red" href="{:url('enterprise/Index/editReport',['id'=>$l.id])}">填写年报</a>
                                                             {elseif $l.status neq "未填写"}
-                                                            <a style="color: green" href="{:url('enterprise/Index/editReport',['id'=>$l.id])}">查看年报</a>
+                                                            <a style="color: green" href="{:url('enterprise/Index/editReport',['id'=>$l.id])}" target="_blank">查看年报</a>
                                                             {/if}
                                                         </td>
                                                         <td style="vertical-align:middle;line-height:60px;padding:0px;"
