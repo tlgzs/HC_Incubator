@@ -30,15 +30,15 @@
                 <div class="m-tab demo-small-pitch" data-ydui-tab>
                     <div class="aui-myOrder-fix" style="border-bottom:2px solid #dff0fa;margin-bottom:2px;">
                         <ul class="tab-nav">
-                            <li class="tab-nav-item tab-active" id="tab-nav1"><a href="{:url('admin/Index/index')}" style="text-decoration:none;"><p
+                            <li class="tab-nav-item" id="tab-nav1"><a href="{:url('admin/Index/index')}" style="text-decoration:none;"><p
                                     style="font-size:18px;">所有企业</p></a></li>
-                            <li class="tab-nav-item" id="tab-nav2"><a href="{:url('admin/Index/index2')}" style="text-decoration:none;"><p
+                            <li class="tab-nav-item tab-active" id="tab-nav2"><a href="{:url('admin/Index/index2')}" style="text-decoration:none;"><p
                                     style="font-size:18px;">孵化企业年报</p></a></li>
                         </ul>
                     </div>
 
                     <div class="tab-panel">
-                        <div class="tab-panel-item tab-active">
+                        <div class="tab-panel-item">
                             <section class="aui-flexView">
 
                                 <div class="row">
@@ -46,7 +46,7 @@
                                         <div class="ibox float-e-margins">
                                             <div class="ibox-content">
                                                 <div class="row" style="padding:5px 0 5px 0 ">
-                                                    <form action="{:url('admin/Index/index')}" method="post">
+                                                    <form action="{:url('admin/Index/index2')}" method="post">
                                                         <div class="col-sm-3">
                                                             <div class="input-group">
                                                                 <input type="text" placeholder="请输入要查询的关键字"
@@ -126,12 +126,12 @@
                             </section>
                         </div>
 
-                        <div class="tab-panel-item">
+                        <div class="tab-panel-item tab-active">
                             <section class="aui-flexView">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="ibox float-e-margins">
-                                            <form action="{:url('admin/Index/index')}" method="post">
+                                            <form action="{:url('admin/Index/index2')}" method="post">
                                                 <div class="ibox-content">
                                                     <div class="row" style="padding:5px 0 5px 0 ">
                                                         <div class="col-sm-1 m-b-xs">
@@ -217,6 +217,9 @@
 
                                         </table>
 
+                                    </div>
+                                    <div style="float: right;">
+                                        {$report_list|raw}
                                     </div>
                                 </div>
                         </div>

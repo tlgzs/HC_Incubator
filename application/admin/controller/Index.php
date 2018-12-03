@@ -49,6 +49,42 @@ class Index extends AdminBase
         return $this->fetch();
     }
 
+
+    /**
+     * @return mixed
+     * @throws \think\exception\DbException
+     * 企业列表
+     */
+    public function index2()
+    {
+        $key = \input('key', '');
+        $key2 = \input('key2', '');
+        $status = \input('status');
+        $year = \input('year');
+        $enterpriseModel = new EnterpriseList();
+        $list = $enterpriseModel->getEnterpriseListByCondition($key);
+
+        $reportModel = new AnnualReports();
+        $report_list = $reportModel->getReportListByCondition($year, $status, $key2);
+
+        //年份的数组
+        $min_year = Db::name('IncubateList')->min('create_time');
+        $min_year = \date('Y', $min_year);
+        $now_year = \date('Y');
+        if ($min_year == 1970){
+            //如果没有记录,则只显示当年年份
+            $min_year = $now_year;
+        }
+        for ($i = $min_year; $i <= $now_year; $i++) {
+            $years[] = \intval($i);
+        }
+        $this->assign('report_list', $report_list);
+        $this->assign('years', $years);
+        $this->assign('list', $list);
+        return $this->fetch();
+    }
+
+
     /**
      * @return \think\response\Json
      * @throws \Exception
